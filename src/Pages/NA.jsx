@@ -252,15 +252,25 @@ export default function NA() {
             >
               3RD PARTY LOGISTICS 3PL
             </option>
+
             <option className="font-bold uppercase" value="SUB SAME DAY SSD">
               SUB SAME DAY SSD
             </option>
+
             <option
               className="font-bold uppercase"
               value="Rural Super Rural RSR"
             >
               Rural Super Rural RSR
             </option>
+
+            <option
+              className="font-bold uppercase"
+              value="XL Delivery Station XLDS"
+            >
+              XL Delivery Station XLDS
+            </option>
+
             <option className="font-bold uppercase" value="TRADITIONAL FC">
               TRADITIONAL FC
             </option>
