@@ -23,13 +23,13 @@ export default function RegionNavs({ region }) {
   }
 
   return (
-    <div className="flex flex-col items-center gap-2">
+    <div className="flex flex-col items-center gap-2 py-2">
       <div className="flex justify-between gap-2 items-center w-full">
         <NavLink
           to={"/NA"}
           title="United States | Canada"
           className={`shadow-2xl ${
-            region === "NA" ? "bg-[#146EB4] text-white" : "bg-white"
+            region === "NA" ? "bg-[#146EB4] text-white" : "bg-white shadow-2xl"
           } hover:bg-[#146EB4] hover:text-black font-bold p-1 px-4 rounded-sm w-full text-center border-2 border-white`}
         >
           NA
@@ -38,7 +38,9 @@ export default function RegionNavs({ region }) {
           to={"/LATAM"}
           title="Mexico | Brazil"
           className={`shadow-2xl ${
-            region === "LATAM" ? "bg-[#146EB4] text-white" : "bg-white"
+            region === "LATAM"
+              ? "bg-[#146EB4] text-white"
+              : "bg-white shadow-2xl"
           } hover:bg-[#146EB4] hover:text-black font-bold p-1 px-4 rounded-sm w-full text-center border-2 border-white`}
         >
           LATAM
@@ -48,7 +50,9 @@ export default function RegionNavs({ region }) {
           title="UK | Ireland | Germany | Austria | Luxembourg | Spain |
             France | Belgium | Italy"
           className={`shadow-2xl ${
-            region === "Europe" ? "bg-[#146EB4] text-white" : "bg-white"
+            region === "Europe"
+              ? "bg-[#146EB4] text-white"
+              : "bg-white shadow-2xl"
           } hover:bg-[#146EB4] hover:text-black font-bold p-1 px-4 rounded-sm w-full text-center border-2 border-white`}
         >
           Europe
@@ -57,7 +61,9 @@ export default function RegionNavs({ region }) {
           to={"/AMET"}
           title="UAE | SAUDI | EGYPT | TURKEY"
           className={`shadow-2xl ${
-            region === "AMET" ? "bg-[#146EB4] text-white" : "bg-white"
+            region === "AMET"
+              ? "bg-[#146EB4] text-white"
+              : "bg-white shadow-2xl"
           } hover:bg-[#146EB4] hover:text-black font-bold p-1 px-4 rounded-sm w-full text-center border-2 border-white`}
         >
           AMET
@@ -66,44 +72,52 @@ export default function RegionNavs({ region }) {
           to={"/APAC"}
           title="AUSTRALIA | JAPAN | SINGAPORE | INDIA"
           className={`shadow-2xl ${
-            region === "APAC" ? "bg-[#146EB4] text-white" : "bg-white"
+            region === "APAC"
+              ? "bg-[#146EB4] text-white"
+              : "bg-white shadow-2xl"
           } hover:bg-[#146EB4] hover:text-black font-bold p-1 px-4 rounded-sm w-full text-center border-2 border-white`}
         >
           APAC
         </NavLink>
       </div>
       {region && (
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-1 w-full">
           <div className="flex gap-1">
-            <div className="bg-white flex items-center w-1/2 justify-between rounded-sm p-1">
-              <h1 className="text-center font-bold p-1">
+            {/* //* ARCHIVE EMAIL */}
+            <div className="bg-green-500 flex items-center w-full justify-between rounded-sm p-2">
+              <h1 className="text-center font-bold">
                 wwos-gsoc-archive@amazon.com
               </h1>
               <button
                 onClick={handleCopy}
-                className="bg-[#146EB4] border-2 text-white p-1 tracking-widest font-bold hover:bg-white hover:text-[#146eb4] rounded-sm cursor-pointer text-sm"
-              >
-                COPY
-              </button>
-            </div>
-            <div className="bg-white flex items-center w-1/2 justify-between rounded-sm p-1">
-              <h1 className="text-center font-bold px-1">{title}</h1>
-              <button
-                onClick={handleCopyTitle}
-                className="bg-[#146EB4] border-2 text-white p-1 tracking-widest font-bold hover:bg-white hover:text-[#146eb4] rounded-sm cursor-pointer text-sm"
+                className="hover:bg-[#146EB4] p-1 tracking-widest font-bold bg-white hover:text-white rounded-sm cursor-pointer text-sm"
               >
                 COPY
               </button>
             </div>
           </div>
-          <div className="bg-white flex items-center w-full justify-between rounded-sm p-1">
-            <h1 className="text-center font-bold px-1 truncate">{body}</h1>
-            <button
-              onClick={handleCopyBody}
-              className="bg-[#146EB4] border-2 text-white p-1 tracking-widest font-bold hover:bg-white hover:text-[#146eb4] rounded-sm cursor-pointer text-sm"
-            >
-              COPY
-            </button>
+
+          <div className="flex gap-1 items-center w-full justify-between rounded-sm">
+            {/* //* ACTION ITEM TITLE */}
+            <div className="bg-black text-white flex items-center w-[30%] justify-between rounded-sm p-2">
+              <h1 className="text-center font-bold px-1">{title}</h1>
+              <button
+                onClick={handleCopyTitle}
+                className="hover:bg-[#146EB4] p-1 tracking-widest font-bold bg-white text-black hover:text-white rounded-sm cursor-pointer text-sm"
+              >
+                COPY
+              </button>
+            </div>
+            {/* //* ACTION ITEM BODY */}
+            <div className="bg-black text-white flex items-center w-[70%] justify-between rounded-sm p-2">
+              <h1 className="text-center font-bold px-1 truncate">{body}</h1>
+              <button
+                onClick={handleCopyBody}
+                className="hover:bg-[#146EB4] p-1 tracking-widest font-bold bg-white text-black hover:text-white rounded-sm cursor-pointer text-sm"
+              >
+                COPY
+              </button>
+            </div>
           </div>
         </div>
       )}

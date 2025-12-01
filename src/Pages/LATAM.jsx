@@ -125,14 +125,14 @@ export default function LATAM() {
   }
 
   return (
-    <div className="min-h-screen bg-[#146EB4] to-blue-200 flex items-center justify-center p-8 font-f1">
+    <div className="min-h-screen bg-[#146EB4] to-blue-200 flex items-center justify-center py-2 font-f1">
       {/* //* NAVBAR */}
-      <nav className="fixed top-0 bg-[#146EB4] w-3/4 py-4 px-2 rounded-sm">
+      <nav className="fixed top-0 bg-[#146EB4] w-full sm:w-[90%] rounded-sm">
         <RegionNavs region={region} />
       </nav>
 
       {/* //* FORM */}
-      <div className="bg-white w-full sm:[90%] mt-24 mx-auto py-4 px-8 rounded-sm shadow-xl space-y-2">
+      <div className="bg-white w-full sm:w-[90%] mt-24 mx-auto py-4 px-8 rounded-sm shadow-xl space-y-2">
         <h1 className="text-lg text-center font-extrabold text-gray-800 flex justify-between">
           NA <span className="text-lg font-bold">(MX / BR)</span>
         </h1>
