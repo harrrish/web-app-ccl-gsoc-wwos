@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import NA from "./Pages/NA";
 import Home from "./Pages/Home";
 import LATAM from "./Pages/LATAM";
-import EUROPE from "./Pages/EUROPE";
+import EUROPE from "./Pages/Europe";
 import AMET from "./Pages/AMET";
 import APAC from "./Pages/APAC";
 import Error from "./Pages/Error";

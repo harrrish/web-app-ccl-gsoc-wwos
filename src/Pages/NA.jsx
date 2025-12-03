@@ -146,7 +146,7 @@ export default function NA() {
       </nav>
 
       {/* //* FORM */}
-      <div className="bg-white w-full sm:w-[90%]  mx-auto py-4 px-8 rounded-sm shadow-xl space-y-2">
+      <div className="bg-white w-full sm:w-[90%]  mx-auto p-3 rounded-sm shadow-xl space-y-2">
         <h1 className="text-lg text-center font-extrabold text-gray-800 flex justify-between">
           NA <span className="text-lg font-bold">(US / CA)</span>
         </h1>
