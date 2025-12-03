@@ -2,25 +2,28 @@ import RegionNavs from "../Components/RegionNavs";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#146EB4] flex items-center justify-center px-4 font-f1">
-      <div className="bg-white w-full sm:max-w-5xl rounded-lg shadow-lg p-12 flex flex-col items-center gap-4 relative">
-        <h1 className="text-lg font-extrabold bg-[#146EB4] text-white px-4 py-2 rounded-sm tracking-wider">
-          NOTE: THIS IS USED ONLY FOR UTR INCIDENTS & DOES NOT COVER OTR
-          INCIDENTS !
+    <div className="min-h-screen bg-[#146EB4] flex items-center justify-center font-f1">
+      <div className="bg-white w-full sm:max-w-5xl rounded-lg shadow-lg p-12 flex flex-col items-center relative gap-10">
+        {/* //* Note */}
+        <h1 className="text-lg font-bold bg-sky-400 text-black px-4 py-2 rounded-sm tracking-wide">
+          NOTE: THIS IS USED ONLY FOR <span>UTR</span> INCIDENTS & DOES NOT
+          SUPPORT <span>OTR</span> INCIDENTS FOR NOW !
         </h1>
 
-        <h1 className="text-3xl font-extrabold text-[#146EB4] tracking-wide">
-          WWOS - GSOC
-        </h1>
+        <div className="flex flex-col gap-4 items-center bg-gray-200 p-4 rounded-sm shadow-md w-3/4">
+          <h1 className="text-3xl font-extrabold text-[#146EB4] tracking-wide">
+            WWOS - GSOC
+          </h1>
 
-        <h2 className="text-lg font-semibold text-gray-700">
-          Consolidated Contacts List
-        </h2>
+          <h2 className="text-lg font-semibold text-gray-700">
+            Consolidated Contacts List
+          </h2>
 
-        <RegionNavs />
+          <RegionNavs />
+        </div>
 
-        <span className="absolute bottom-0 right-0 px-2 font-bold text-[#146EB4]">
-          Hover over to find out the countries that are handled !
+        <span className="font-bold text-black">
+          For any feedback or suggestions please out reach to harisss@amazon.com
         </span>
       </div>
     </div>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import RegionNavs from "../Components/RegionNavs";
 import { useLocation } from "react-router-dom";
 import ContactsFooter from "../Components/ContactsFooter";
+import { station } from "../data";
 
 export default function NA() {
   const { pathname } = useLocation();
@@ -46,15 +47,18 @@ export default function NA() {
     //* REPORTED BY
     if (country === "US") {
       if (reportedBy === "DP") {
-        newCon.push("sds-gsoc-flex-incident@amazon.com");
+        if (language === "ENGLISH")
+          newCon.push("sds-gsoc-flex-incident@amazon.com");
         if (language === "SPANISH")
           newCon.push("sds-gsoc-flex-incident-spanish@amazon.com");
       } else if (reportedBy === "CXCMKnownDA") {
-        newCon.push("sds-gsoc-driver-potentialharm@amazon.com");
+        if (language === "ENGLISH")
+          newCon.push("sds-gsoc-driver-potentialharm@amazon.com");
         if (language === "SPANISH")
           newCon.push("sds-gsoc-driver-potentialharm-spanish@amazon.com");
       } else if (reportedBy === "CXCM") {
-        newCon.push("sds-gsoc-cx-incident@amazon.com");
+        if (language === "ENGLISH")
+          newCon.push("sds-gsoc-cx-incident@amazon.com");
         if (language === "SPANISH")
           newCon.push("sds-gsoc-cx-incident@amazon.com");
       } else if (reportedBy === "HubDA") {
@@ -62,15 +66,18 @@ export default function NA() {
       }
     } else if (country === "CA") {
       if (reportedBy === "DP") {
-        newCon.push("sds-gsoc-flex-incident@amazon.ca");
+        if (language === "ENGLISH")
+          newCon.push("sds-gsoc-flex-incident@amazon.ca");
         if (language === "SPANISH")
           newCon.push("sds-gsoc-flex-incident-spanish@amazon.com,");
       } else if (reportedBy === "CXCMKnownDA") {
-        newCon.push("sds-gsoc-driver-potentialharm@amazon.ca");
+        if (language === "ENGLISH")
+          newCon.push("sds-gsoc-driver-potentialharm@amazon.ca");
         if (language === "SPANISH")
           newCon.push("sds-gsoc-driver-potentialharm-spanish@amazon.com");
       } else if (reportedBy === "CXCM") {
-        newCon.push("sds-gsoc-cx-incident@amazon.ca");
+        if (language === "ENGLISH")
+          newCon.push("sds-gsoc-cx-incident@amazon.ca");
         if (language === "SPANISH")
           newCon.push("sds-gsoc-cx-incident@amazon.com");
       }
@@ -239,46 +246,15 @@ export default function NA() {
             onChange={(event) => setSiteType(event.target.value)}
             className="border p-2 rounded-sm font-medium w-1/4 text-center"
           >
-            <option className="font-bold uppercase" value="AMZL">
-              AMZL
-            </option>
-            <option
-              className="font-bold uppercase"
-              value="3RD PARTY LOGISTICS 3PL"
-            >
-              3RD PARTY LOGISTICS 3PL
-            </option>
-
-            <option className="font-bold uppercase" value="SUB SAME DAY SSD">
-              SUB SAME DAY SSD
-            </option>
-
-            <option
-              className="font-bold uppercase"
-              value="Rural Super Rural RSR"
-            >
-              Rural Super Rural RSR
-            </option>
-
-            <option
-              className="font-bold uppercase"
-              value="XL Delivery Station XLDS"
-            >
-              XL Delivery Station XLDS
-            </option>
-
-            <option className="font-bold uppercase" value="TRADITIONAL FC">
-              TRADITIONAL FC
-            </option>
-            <option
-              className="font-bold uppercase"
-              value="Traditional Sortable AR"
-            >
-              Traditional Sortable AR
-            </option>
-            <option className="font-bold uppercase" value="Sort Center SC">
-              Sort Center SC
-            </option>
+            {station.map((s) => (
+              <option
+                key={Math.random()}
+                className="font-bold uppercase"
+                value={s}
+              >
+                {s}
+              </option>
+            ))}
           </select>
         </div>
 
@@ -445,17 +421,17 @@ export default function NA() {
                 <input
                   type="radio"
                   name="driverInvolved"
-                  value="HUB"
-                  id="HUB"
-                  checked={driverInvolved === "HUB"}
+                  value="HUB DA"
+                  id="HUB DA"
+                  checked={driverInvolved === "HUB DA"}
                   onChange={(e) => setDriverInvolved(e.target.value)}
                   className="cursor-pointer"
                 />
                 <label
-                  htmlFor="HUB"
+                  htmlFor="HUB DA"
                   className="uppercase font-bold tracking-wider cursor-pointer"
                 >
-                  HUB
+                  HUB DA
                 </label>
               </div>
             )}

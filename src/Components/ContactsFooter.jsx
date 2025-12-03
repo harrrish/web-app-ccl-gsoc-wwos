@@ -7,27 +7,27 @@ export default function ContactsFooter({ contacts }) {
     window.location.reload();
   }
   return (
-    <footer className="bg-[#146EB4] w-full sm:w-[90%] rounded-sm">
+    <footer className="bg-white p-2 w-full sm:w-[90%] rounded-sm">
       {contacts.length > 0 && (
         <div className="flex flex-col gap-2 justify-center">
-          <div className="flex items-center gap-5">
-            <h1 className="w-[80%] px-4 py-2 text-sm text-gray-900 bg-gray-200 border-sky-400 rounded-sm font-bold truncate text-left">
+          <div className="flex items-center gap-3">
+            <h1 className="w-[80%] px-4 py-2 text-sm text-gray-900 bg-gray-300 border-sky-400 rounded-sm font-bold truncate text-left">
               wwos-gsoc-archive@amazon.com
             </h1>
             <button
               onClick={handleCopyArchive}
-              className="w-[20%] py-1 text-white bg-[#146EB4] hover:text-[#146EB4] rounded-sm duration-300 cursor-pointer border-2 hover:bg-white font-medium tracking-wide"
+              className="w-[20%] p-1 text-white bg-[#146EB4] hover:text-[#146EB4] rounded-sm duration-300 cursor-pointer border-2 border-[#146EB4] hover:bg-white font-medium tracking-wide"
             >
               Copy
             </button>
           </div>
-          <div className="flex gap-2">
+          <div className="flex">
             <div className="flex flex-col gap-2 w-[80%]">
               {/* //* CONTACTS DISPLAY */}
               <div className="flex flex-wrap gap-2 w-full">
                 {contacts.map((c, i) => (
                   <span
-                    className="w-[32.5%] px-4 text-sm text-center text-gray-900 bg-gray-200 border-sky-400 rounded-sm font-bold truncate"
+                    className="w-[32.5%] px-4 text-sm text-center text-gray-900 bg-gray-300 border-sky-400 rounded-sm font-bold truncate py-1"
                     key={i}
                     title={c}
                   >
@@ -39,7 +39,7 @@ export default function ContactsFooter({ contacts }) {
             {/* //* COPY CONTACTS */}
             <button
               onClick={() => handleCopy(contacts)}
-              className="w-[20%] p-1 py-2 text-white bg-[#146EB4] hover:text-[#146EB4] rounded-sm duration-300 cursor-pointer border-2 hover:bg-white font-medium tracking-wide"
+              className="w-[20%] text-white bg-[#146EB4] hover:text-[#146EB4] rounded-sm duration-300 cursor-pointer border-2 border-[#146EB4] hover:bg-white font-medium tracking-wide"
             >
               Copy Contacts
             </button>

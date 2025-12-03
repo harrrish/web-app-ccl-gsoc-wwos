@@ -2,6 +2,7 @@ import { useState } from "react";
 import RegionNavs from "../Components/RegionNavs";
 import { useLocation } from "react-router-dom";
 import ContactsFooter from "../Components/ContactsFooter";
+import { station } from "../data";
 
 export default function AMET() {
   const { pathname } = useLocation();
@@ -207,48 +208,15 @@ export default function AMET() {
             onChange={(event) => setSiteType(event.target.value)}
             className="border p-2 rounded-sm font-medium w-1/4 text-center"
           >
-            <option className="font-bold uppercase" value="AMZL">
-              AMZL
-            </option>
-
-            {country === "JP" && (
-              <option className="font-bold uppercase" value="AMXL">
-                AMXL
+            {station.map((s) => (
+              <option
+                key={Math.random()}
+                className="font-bold uppercase"
+                value={s}
+              >
+                {s}
               </option>
-            )}
-
-            <option
-              className="font-bold uppercase"
-              value="3RD PARTY LOGISTICS 3PL"
-            >
-              3RD PARTY LOGISTICS 3PL
-            </option>
-
-            <option className="font-bold uppercase" value="SUB SAME DAY SSD">
-              SUB SAME DAY SSD
-            </option>
-
-            <option
-              className="font-bold uppercase"
-              value="Rural Super Rural RSR"
-            >
-              Rural Super Rural RSR
-            </option>
-
-            <option className="font-bold uppercase" value="TRADITIONAL FC">
-              TRADITIONAL FC
-            </option>
-
-            <option
-              className="font-bold uppercase"
-              value="Traditional Sortable AR"
-            >
-              Traditional Sortable AR
-            </option>
-
-            <option className="font-bold uppercase" value="Sort Center SC">
-              Sort Center SC
-            </option>
+            ))}
           </select>
         </div>
 

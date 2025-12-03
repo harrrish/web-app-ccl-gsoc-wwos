@@ -8,6 +8,8 @@ export const station = [
   "Sort Center SC",
   "GROCERY FULFILLMENT CENTER GFC",
   "EXCHANGE POINT XPT",
+  "AMXL",
+  "INBOUND CROSS DOCK IXD",
 ];
 
 export const archiveEmail = "wwos-gsoc-archive@amazon.com";

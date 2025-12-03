@@ -2,6 +2,7 @@ import { useState } from "react";
 import RegionNavs from "../Components/RegionNavs";
 import { useLocation } from "react-router-dom";
 import ContactsFooter from "../Components/ContactsFooter";
+import { station } from "../data";
 
 export default function LATAM() {
   const { pathname } = useLocation();
@@ -214,100 +215,24 @@ export default function LATAM() {
           </select>
         </div>
 
-        {/* //* SELECT SEV */}
+        {/* //* SELECT SITE TYPE */}
         <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
-          <h1 className="text-lg font-medium w-1/4 text-center">Severity:</h1>
-          <div className="w-1/4 flex justify-between gap-8">
-            <div className="flex gap-1 items-center">
-              <input
-                type="radio"
-                name="severity"
-                value="1"
-                id="1"
-                checked={severity === "1"}
-                onChange={(e) => setSeverity(e.target.value)}
-                className="cursor-pointer"
-              />
-              <label
-                htmlFor="1"
-                className="uppercase font-bold tracking-wider cursor-pointer"
+          <h2 className="text-lg font-medium w-1/4 text-center">Site type:</h2>
+          <select
+            value={siteType}
+            onChange={(event) => setSiteType(event.target.value)}
+            className="border p-2 rounded-sm font-medium w-1/4 text-center"
+          >
+            {station.map((s) => (
+              <option
+                key={Math.random()}
+                className="font-bold uppercase"
+                value={s}
               >
-                1
-              </label>
-            </div>
-
-            <div className="flex gap-1 items-center">
-              <input
-                type="radio"
-                name="severity"
-                value="2"
-                id="2"
-                checked={severity === "2"}
-                onChange={(e) => setSeverity(e.target.value)}
-                className="cursor-pointer"
-              />
-              <label
-                htmlFor="2"
-                className="uppercase font-bold tracking-wider cursor-pointer"
-              >
-                2
-              </label>
-            </div>
-
-            <div className="flex gap-1 items-center">
-              <input
-                type="radio"
-                name="severity"
-                value="3"
-                id="3"
-                checked={severity === "3"}
-                onChange={(e) => setSeverity(e.target.value)}
-                className="cursor-pointer"
-              />
-              <label
-                htmlFor="3"
-                className="uppercase font-bold tracking-wider cursor-pointer"
-              >
-                3
-              </label>
-            </div>
-
-            <div className="flex gap-1 items-center">
-              <input
-                type="radio"
-                name="severity"
-                value="4"
-                id="4"
-                checked={severity === "4"}
-                onChange={(e) => setSeverity(e.target.value)}
-                className="cursor-pointer"
-              />
-              <label
-                htmlFor="4"
-                className="uppercase font-bold tracking-wider cursor-pointer"
-              >
-                4
-              </label>
-            </div>
-
-            <div className="flex gap-1 items-center">
-              <input
-                type="radio"
-                name="severity"
-                value="5"
-                id="5"
-                checked={severity === "5"}
-                onChange={(e) => setSeverity(e.target.value)}
-                className="cursor-pointer"
-              />
-              <label
-                htmlFor="5"
-                className="uppercase font-bold tracking-wider cursor-pointer"
-              >
-                5
-              </label>
-            </div>
-          </div>
+                {s}
+              </option>
+            ))}
+          </select>
         </div>
 
         {/* //* DRIVER INVOLVED */}

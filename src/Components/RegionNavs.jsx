@@ -19,7 +19,7 @@ export default function RegionNavs({ region }) {
           title="United States | Canada"
           className={`shadow-2xl ${
             region === "NA" ? "bg-[#146EB4] text-white" : "bg-white shadow-2xl"
-          } hover:bg-[#146EB4] hover:text-black font-bold p-1 px-4 rounded-sm w-full text-center border-2 border-white`}
+          } hover:bg-sky-400 hover:text-black font-bold p-1 px-4 rounded-sm w-full text-center border-2 border-white tracking-widest`}
         >
           NA
         </NavLink>
@@ -30,7 +30,7 @@ export default function RegionNavs({ region }) {
             region === "LATAM"
               ? "bg-[#146EB4] text-white"
               : "bg-white shadow-2xl"
-          } hover:bg-[#146EB4] hover:text-black font-bold p-1 px-4 rounded-sm w-full text-center border-2 border-white`}
+          } hover:bg-sky-400 hover:text-black font-bold p-1 px-4 rounded-sm w-full text-center border-2 border-white tracking-widest`}
         >
           LATAM
         </NavLink>
@@ -42,7 +42,7 @@ export default function RegionNavs({ region }) {
             region === "EUROPE"
               ? "bg-[#146EB4] text-white"
               : "bg-white shadow-2xl"
-          } hover:bg-[#146EB4] hover:text-black font-bold p-1 px-4 rounded-sm w-full text-center border-2 border-white`}
+          } hover:bg-sky-400 hover:text-black font-bold p-1 px-4 rounded-sm w-full text-center border-2 border-white tracking-widest`}
         >
           EUROPE
         </NavLink>
@@ -53,7 +53,7 @@ export default function RegionNavs({ region }) {
             region === "AMET"
               ? "bg-[#146EB4] text-white"
               : "bg-white shadow-2xl"
-          } hover:bg-[#146EB4] hover:text-black font-bold p-1 px-4 rounded-sm w-full text-center border-2 border-white`}
+          } hover:bg-sky-400 hover:text-black font-bold p-1 px-4 rounded-sm w-full text-center border-2 border-white tracking-widest`}
         >
           AMET
         </NavLink>
@@ -64,7 +64,7 @@ export default function RegionNavs({ region }) {
             region === "APAC"
               ? "bg-[#146EB4] text-white"
               : "bg-white shadow-2xl"
-          } hover:bg-[#146EB4] hover:text-black font-bold p-1 px-4 rounded-sm w-full text-center border-2 border-white`}
+          } hover:bg-sky-400 hover:text-black font-bold p-1 px-4 rounded-sm w-full text-center border-2 border-white tracking-widest`}
         >
           APAC
         </NavLink>
