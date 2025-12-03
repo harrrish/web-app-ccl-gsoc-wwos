@@ -1,6 +1,7 @@
 import { useState } from "react";
 import RegionNavs from "../Components/RegionNavs";
 import { useLocation } from "react-router-dom";
+import ContactsFooter from "../Components/ContactsFooter";
 
 export default function AMET() {
   const { pathname } = useLocation();
@@ -107,15 +108,8 @@ export default function AMET() {
     setContacts([...newCon]);
   };
 
-  //* COPY CONTACTS
-  async function handleCopy() {
-    await navigator.clipboard.writeText(contacts);
-    alert(" Copied to clipboard! \n\n Page will be now restored to default !");
-    window.location.reload();
-  }
-
   return (
-    <div className="min-h-screen bg-[#146EB4] to-blue-200 flex font-f1 flex-col items-center">
+    <div className="min-h-screen bg-[#146EB4] to-blue-200 flex font-f1 flex-col items-center gap-2">
       {/* //* NAVBAR */}
       <nav className="bg-[#146EB4] w-full sm:w-[90%] rounded-sm">
         <RegionNavs region={region} />
@@ -578,32 +572,9 @@ export default function AMET() {
             Generate Contacts
           </button>
         </div>
-
-        {contacts.length > 0 && (
-          <div className="flex flex-col gap-2">
-            <div className="w-full flex flex-col gap-2">
-              {/* //* CONTACTS DISPLAY */}
-              <div className="flex flex-wrap gap-2">
-                {contacts.map((c, i) => (
-                  <span
-                    className="w-fit px-4 text-sm text-center border-2 text-gray-900 bg-gray-200 border-sky-400 rounded-full font-bold"
-                    key={i}
-                  >
-                    {c}
-                  </span>
-                ))}
-              </div>
-            </div>
-            {/* //* COPY CONTACTS */}
-            <button
-              onClick={handleCopy}
-              className="w-full p-1 py-2 text-white bg-[#146EB4] hover:text-[#146EB4] rounded-sm duration-300 cursor-pointer border-2 hover:bg-white font-medium tracking-wide"
-            >
-              Copy Contacts
-            </button>
-          </div>
-        )}
       </div>
+      {/* //* DISPLAY GENERATED CONTACTS */}
+      <ContactsFooter contacts={contacts} />
     </div>
   );
 }

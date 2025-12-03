@@ -1,6 +1,7 @@
 import { useState } from "react";
 import RegionNavs from "../Components/RegionNavs";
 import { useLocation } from "react-router-dom";
+import ContactsFooter from "../Components/ContactsFooter";
 
 export default function NA() {
   const { pathname } = useLocation();
@@ -131,22 +132,15 @@ export default function NA() {
     setContacts([...newCon]);
   };
 
-  //* COPY CONTACTS
-  async function handleCopy() {
-    await navigator.clipboard.writeText(contacts);
-    alert(" Copied to clipboard! \n\n Page will be now restored to default !");
-    window.location.reload();
-  }
-
   return (
-    <div className="min-h-screen bg-[#146EB4] to-blue-200 flex font-f1 flex-col items-center">
+    <div className="min-h-screen bg-[#146EB4] to-blue-200 flex font-f1 flex-col items-center gap-2">
       {/* //* NAVBAR */}
       <nav className="bg-[#146EB4] w-full sm:w-[90%] rounded-sm">
         <RegionNavs region={region} />
       </nav>
 
       {/* //* FORM */}
-      <div className="bg-white w-full sm:w-[90%]  mx-auto p-3 rounded-sm shadow-xl space-y-2">
+      <div className="bg-white w-full sm:w-[90%] p-3 rounded-sm flex flex-col gap-1">
         <h1 className="text-lg text-center font-extrabold text-gray-800 flex justify-between">
           NA <span className="text-lg font-bold">(US / CA)</span>
         </h1>
@@ -540,7 +534,7 @@ export default function NA() {
           </div>
         </div>
 
-        {/* //* Hazardous Material */}
+        {/* //* HAZARDOUS MATERIAL */}
         <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
           <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/4 text-center">
             Hazardous Material:
@@ -584,7 +578,7 @@ export default function NA() {
           </div>
         </div>
 
-        {/* //* Detrimental Behavior */}
+        {/* //* DETRIMENTAL BEHAVIOR */}
         <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
           <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/4 text-center">
             Detrimental Behavior:
@@ -628,7 +622,7 @@ export default function NA() {
           </div>
         </div>
 
-        {/* //* Delivery Van Vehicle Thermal Event  */}
+        {/* //* DELIVERY VEHICLE VAN THERMAL EVENT */}
         <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
           <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/4 text-center">
             Vehicle Thermal Event :
@@ -804,8 +798,8 @@ export default function NA() {
           </div>
         </div>
 
+        {/* //* GENERATE CONTACTS BUTTON */}
         <div className="flex gap-2">
-          {/* //* GENERATE CONTACTS BUTTON */}
           <button
             onClick={generateContacts}
             className="p-2 text-white bg-[#146EB4] hover:text-[#146EB4] border-[#146EB4] rounded-sm duration-300 cursor-pointer border-2 hover:bg-white font-medium tracking-wide w-full"
@@ -813,32 +807,10 @@ export default function NA() {
             Generate Contacts
           </button>
         </div>
-
-        {contacts.length > 0 && (
-          <div className="flex flex-col gap-2">
-            <div className="w-full flex flex-col gap-2">
-              {/* //* CONTACTS DISPLAY */}
-              <div className="flex flex-wrap gap-2">
-                {contacts.map((c, i) => (
-                  <span
-                    className="w-fit px-4 text-sm text-center border-2 text-gray-900 bg-gray-200 border-sky-400 rounded-full font-bold"
-                    key={i}
-                  >
-                    {c}
-                  </span>
-                ))}
-              </div>
-            </div>
-            {/* //* COPY CONTACTS */}
-            <button
-              onClick={handleCopy}
-              className="w-full p-1 py-2 text-white bg-[#146EB4] hover:text-[#146EB4] rounded-sm duration-300 cursor-pointer border-2 hover:bg-white font-medium tracking-wide"
-            >
-              Copy Contacts
-            </button>
-          </div>
-        )}
       </div>
+
+      {/* //* DISPLAY GENERATED CONTACTS */}
+      <ContactsFooter contacts={contacts} />
     </div>
   );
 }
