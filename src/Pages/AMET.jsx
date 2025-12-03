@@ -115,7 +115,7 @@ export default function AMET() {
   }
 
   return (
-    <div className="min-h-screen bg-[#146EB4] to-blue-200 flex items-center justify-center py-2 font-f1">
+    <div className="min-h-screen bg-[#146EB4] to-blue-200 flex font-f1 flex-col items-center">
       {/* //* NAVBAR */}
       <nav className="fixed top-0 bg-[#146EB4] w-full sm:w-[90%] rounded-sm">
         <RegionNavs region={region} />

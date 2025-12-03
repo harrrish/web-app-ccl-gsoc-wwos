@@ -2,7 +2,7 @@ import { useState } from "react";
 import RegionNavs from "../Components/RegionNavs";
 import { useLocation } from "react-router-dom";
 
-export default function Europe() {
+export default function EUROPE() {
   const { pathname } = useLocation();
   const region = pathname.split("/")[1];
 
@@ -131,16 +131,16 @@ export default function Europe() {
   }
 
   return (
-    <div className="min-h-screen bg-[#146EB4] to-blue-200 flex items-center justify-center py-2 font-f1">
+    <div className="min-h-screen bg-[#146EB4] to-blue-200 flex font-f1 flex-col items-center">
       {/* //* NAVBAR */}
-      <nav className="fixed top-0 bg-[#146EB4] w-full sm:w-[90%] rounded-sm">
+      <nav className="bg-[#146EB4] w-full sm:w-[90%] rounded-sm">
         <RegionNavs region={region} />
       </nav>
 
       {/* //* FORM */}
-      <div className="bg-white w-full sm:w-[90%] mt-24 mx-auto py-4 px-8 rounded-sm shadow-xl space-y-2">
+      <div className="bg-white w-full sm:w-[90%]  mx-auto py-4 px-8 rounded-sm shadow-xl space-y-2">
         <h1 className="text-lg text-center font-extrabold text-gray-800 flex justify-between">
-          Europe{" "}
+          EUROPE{" "}
           <span className="text-lg font-bold">
             (UK / IE / NL / DE / ES / FR / IT)
           </span>

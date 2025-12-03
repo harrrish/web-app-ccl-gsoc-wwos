@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import NA from "./Pages/NA";
 import Home from "./Pages/Home";
 import LATAM from "./Pages/LATAM";
-import Europe from "./Pages/Europe";
+import EUROPE from "./Pages/EUROPE";
 import AMET from "./Pages/AMET";
 import APAC from "./Pages/APAC";
 import Error from "./Pages/Error";
@@ -21,8 +21,8 @@ const router = createBrowserRouter([
     element: <LATAM />,
   },
   {
-    path: "/Europe",
-    element: <Europe />,
+    path: "/EUROPE",
+    element: <EUROPE />,
   },
   {
     path: "/AMET",

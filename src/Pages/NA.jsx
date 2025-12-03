@@ -139,14 +139,14 @@ export default function NA() {
   }
 
   return (
-    <div className="min-h-screen bg-[#146EB4] to-blue-200 flex items-center justify-center py-2 font-f1">
+    <div className="min-h-screen bg-[#146EB4] to-blue-200 flex font-f1 flex-col items-center">
       {/* //* NAVBAR */}
-      <nav className="fixed top-0 bg-[#146EB4] w-full sm:w-[90%] rounded-sm">
+      <nav className="bg-[#146EB4] w-full sm:w-[90%] rounded-sm">
         <RegionNavs region={region} />
       </nav>
 
       {/* //* FORM */}
-      <div className="bg-white w-full sm:w-[90%] mt-24 mx-auto py-4 px-8 rounded-sm shadow-xl space-y-2">
+      <div className="bg-white w-full sm:w-[90%]  mx-auto py-4 px-8 rounded-sm shadow-xl space-y-2">
         <h1 className="text-lg text-center font-extrabold text-gray-800 flex justify-between">
           NA <span className="text-lg font-bold">(US / CA)</span>
         </h1>
