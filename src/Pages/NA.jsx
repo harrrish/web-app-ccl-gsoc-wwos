@@ -130,6 +130,8 @@ export default function NA() {
     newCon.push("NORTH AMERICA OPS PR");
 
     setContacts([...newCon]);
+
+    console.log(contacts);
   };
 
   return (

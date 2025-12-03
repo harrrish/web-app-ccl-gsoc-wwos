@@ -1,6 +1,11 @@
-import { handleCopy, handleCopyArchive } from "../data";
+import { handleCopyArchive } from "../data";
 
 export default function ContactsFooter({ contacts }) {
+  async function handleCopy() {
+    await navigator.clipboard.writeText(contacts);
+    alert(" Copied to clipboard! \n\n Page will be now restored to default !");
+    window.location.reload();
+  }
   return (
     <footer className="bg-[#146EB4] w-full sm:w-[90%] rounded-sm">
       {contacts.length > 0 && (
@@ -33,7 +38,7 @@ export default function ContactsFooter({ contacts }) {
             </div>
             {/* //* COPY CONTACTS */}
             <button
-              onClick={handleCopy}
+              onClick={() => handleCopy(contacts)}
               className="w-[20%] p-1 py-2 text-white bg-[#146EB4] hover:text-[#146EB4] rounded-sm duration-300 cursor-pointer border-2 hover:bg-white font-medium tracking-wide"
             >
               Copy Contacts

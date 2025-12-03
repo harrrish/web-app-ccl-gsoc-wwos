@@ -21,9 +21,3 @@ export async function handleCopyArchive() {
   await navigator.clipboard.writeText("wwos-gsoc-archive@amazon.com");
   alert(`Copied "wwos-gsoc-archive@amazon.com" to clipboard`);
 }
-
-export async function handleCopy(contacts) {
-  await navigator.clipboard.writeText(contacts);
-  alert(" Copied to clipboard! \n\n Page will be now restored to default !");
-  window.location.reload();
-}
