@@ -9,8 +9,8 @@ export default function ContactsFooter({ contacts }) {
   return (
     <footer className="bg-white p-2 w-full sm:w-[90%] rounded-sm">
       {contacts.length > 0 && (
-        <div className="flex flex-col gap-2 justify-center">
-          <div className="flex items-center gap-3">
+        <div className="flex flex-col gap-3 justify-center items-center">
+          <div className="flex items-center gap-3 w-full">
             <h1 className="w-[80%] px-4 py-2 text-sm text-gray-900 bg-gray-300 border-sky-400 rounded-sm font-bold truncate text-left">
               wwos-gsoc-archive@amazon.com
             </h1>
@@ -44,6 +44,10 @@ export default function ContactsFooter({ contacts }) {
               Copy Contacts
             </button>
           </div>
+          <h1 className="font-bold text-black">
+            For any feedback or suggestions please out reach to
+            harisss@amazon.com
+          </h1>
         </div>
       )}
     </footer>

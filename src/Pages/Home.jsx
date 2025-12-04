@@ -22,9 +22,9 @@ export default function Home() {
           <RegionNavs />
         </div>
 
-        <span className="font-bold text-black">
+        <h1 className="font-bold text-black">
           For any feedback or suggestions please out reach to harisss@amazon.com
-        </span>
+        </h1>
       </div>
     </div>
   );
