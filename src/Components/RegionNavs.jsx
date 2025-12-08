@@ -72,25 +72,33 @@ export default function RegionNavs({ region }) {
       {region && (
         <div className="flex flex-col gap-1 w-full">
           <div className="flex gap-1 flex-col rounded-sm">
-            <h1 className="text-center font-extrabold tracking-wider bg-sky-200 rounded-sm">
+            <h1 className="text-center font-extrabold tracking-wider text-white rounded-sm border-2">
               CLOSING STATEMENT
             </h1>
-            <div className="bg-sky-400 rounded-sm p-2">
-              <h1 className="font-extrabold">DSP DA</h1>
-              <h1 className="text-center text-lg">
-                Thank you for reporting this incident. We take these reports
-                seriously and will be escalating to additional teams for review
-                and investigation.
+            <div className="rounded-sm flex justify-between gap-2 items-center border-2 text-white">
+              <h1 className="font-extrabold w-[20%] rounded-sm text-center py-1">
+                DSP DA
+              </h1>
+              <h1 className="text-center text-md w-[80%] rounded-sm flex flex-col p-1 bg-sky-200 text-black font-extrabold tracking-wide">
+                Thank you for reporting this incident.{" "}
+                <span>
+                  We take these reports seriously and will be escalating to
+                  additional teams for review and investigation.
+                </span>
               </h1>
             </div>
-            <div className="bg-sky-400 rounded-sm p-2">
-              <h1 className="font-extrabold">CM/CX/US HUB DA/FLEX DP</h1>
-              <h1 className="text-center text-lg">
-                Thank you for reporting this incident. We take these reports
-                seriously and will be escalating to additional teams for review
-                and investigation, the follow up team will give you a call in 12
-                hours to check on how you are doing and answer any additional
-                questions.
+            <div className="rounded-sm flex justify-between gap-2 items-center border-2 text-white">
+              <h1 className="font-extrabold w-[20%] rounded-sm text-center py-1">
+                CM/CX/US HUB DA/FLEX DP
+              </h1>
+              <h1 className="text-center text-md w-[80%] rounded-sm flex flex-col p-1 bg-sky-200 text-black font-extrabold tracking-wide">
+                <span>Thank you for reporting this incident.</span>{" "}
+                <span>
+                  We take these reports seriously and will be escalating to
+                  additional teams for review and investigation, the follow up
+                  team will give you a call in 12 hours to check on how you are
+                  doing and answer any additional questions.
+                </span>
               </h1>
             </div>
           </div>
