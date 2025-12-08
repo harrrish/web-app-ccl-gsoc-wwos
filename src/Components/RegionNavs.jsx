@@ -71,7 +71,29 @@ export default function RegionNavs({ region }) {
       </div>
       {region && (
         <div className="flex flex-col gap-1 w-full">
-          <div className="flex gap-1">{/* //* ARCHIVE EMAIL */}</div>
+          <div className="flex gap-1 flex-col rounded-sm">
+            <h1 className="text-center font-extrabold tracking-wider bg-sky-200 rounded-sm">
+              CLOSING STATEMENT
+            </h1>
+            <div className="bg-sky-400 rounded-sm p-2">
+              <h1 className="font-extrabold">DSP DA</h1>
+              <h1 className="text-center text-lg">
+                Thank you for reporting this incident. We take these reports
+                seriously and will be escalating to additional teams for review
+                and investigation.
+              </h1>
+            </div>
+            <div className="bg-sky-400 rounded-sm p-2">
+              <h1 className="font-extrabold">CM/CX/US HUB DA/FLEX DP</h1>
+              <h1 className="text-center text-lg">
+                Thank you for reporting this incident. We take these reports
+                seriously and will be escalating to additional teams for review
+                and investigation, the follow up team will give you a call in 12
+                hours to check on how you are doing and answer any additional
+                questions.
+              </h1>
+            </div>
+          </div>
 
           <div className="flex gap-1 items-center w-full justify-between rounded-sm">
             {/* //* ACTION ITEM TITLE */}

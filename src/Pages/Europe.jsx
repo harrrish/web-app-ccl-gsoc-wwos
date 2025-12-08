@@ -16,7 +16,6 @@ export default function EUROPE() {
   const [reportedBy, setReportedBy] = useState("DA");
 
   const [cxImpact, setCxImpact] = useState("NO");
-  const [detrimental, setDetrimental] = useState("NO");
   const [hazardous, setHazardous] = useState("NO");
   const [discrimination, setDiscrimination] = useState("NO");
 
@@ -101,9 +100,6 @@ export default function EUROPE() {
       newCon.push("NA HAZMAT SUPPORT GROUP");
       newCon.push("DANGEROUS GOODS SUPPORT GROUP");
     }
-
-    //* DETRIMENTAL
-    if (detrimental === "YES") newCon.push(`AMER LAST MILE RISK`);
 
     //* DISCRIMINATION
     if (discrimination === "YES") newCon.push("DISCRIMINATION SUPPORT GROUP");
@@ -562,50 +558,6 @@ export default function EUROPE() {
               />
               <label
                 htmlFor="NO_hazardous"
-                className="uppercase font-bold tracking-wider cursor-pointer"
-              >
-                No
-              </label>
-            </div>
-          </div>
-        </div>
-
-        {/* //* Detrimental Behavior */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
-          <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/4 text-center">
-            Detrimental Behavior:
-          </h2>
-          <div className="w-1/4 flex justify-center gap-8">
-            <div className="flex gap-1 items-center">
-              <input
-                type="radio"
-                name="detrimental"
-                value="YES"
-                id="YES_detrimental"
-                checked={detrimental === "YES"}
-                onChange={(e) => setDetrimental(e.target.value)}
-                className="cursor-pointer"
-              />
-              <label
-                htmlFor="YES_detrimental"
-                className="uppercase font-bold tracking-wider cursor-pointer"
-              >
-                Yes
-              </label>
-            </div>
-
-            <div className="flex gap-1 items-center">
-              <input
-                type="radio"
-                name="detrimental"
-                value="NO"
-                id="NO_detrimental"
-                checked={detrimental === "NO"}
-                onChange={(e) => setDetrimental(e.target.value)}
-                className="cursor-pointer"
-              />
-              <label
-                htmlFor="NO_detrimental"
                 className="uppercase font-bold tracking-wider cursor-pointer"
               >
                 No
