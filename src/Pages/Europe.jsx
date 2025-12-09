@@ -133,7 +133,7 @@ export default function EUROPE() {
         <h1 className="text-lg text-center font-extrabold text-gray-800 flex justify-between">
           EUROPE{" "}
           <span className="text-lg font-bold">
-            (UK / IE / NL / DE / ES / FR / IT)
+            (UK / IE / NL / DE / ES / FR / IT / AT / PL / LX / CZ)
           </span>
         </h1>
 
@@ -264,6 +264,60 @@ export default function EUROPE() {
                 className="uppercase font-bold tracking-wider cursor-pointer"
               >
                 IT
+              </label>
+            </div>
+
+            <div className="flex gap-1 items-center">
+              <input
+                type="radio"
+                name="country"
+                value="AT"
+                id="AT"
+                checked={country === "AT"}
+                onChange={(e) => setCountry(e.target.value)}
+                className="cursor-pointer"
+              />
+              <label
+                htmlFor="AT"
+                className="uppercase font-bold tracking-wider cursor-pointer"
+              >
+                AT
+              </label>
+            </div>
+
+            <div className="flex gap-1 items-center">
+              <input
+                type="radio"
+                name="country"
+                value="LU"
+                id="LU"
+                checked={country === "LU"}
+                onChange={(e) => setCountry(e.target.value)}
+                className="cursor-pointer"
+              />
+              <label
+                htmlFor="LU"
+                className="uppercase font-bold tracking-wider cursor-pointer"
+              >
+                LU
+              </label>
+            </div>
+
+            <div className="flex gap-1 items-center">
+              <input
+                type="radio"
+                name="country"
+                value="CZ"
+                id="CZ"
+                checked={country === "CZ"}
+                onChange={(e) => setCountry(e.target.value)}
+                className="cursor-pointer"
+              />
+              <label
+                htmlFor="CZ"
+                className="uppercase font-bold tracking-wider cursor-pointer"
+              >
+                CZ
               </label>
             </div>
           </div>
