@@ -215,26 +215,6 @@ export default function LATAM() {
           </select>
         </div>
 
-        {/* //* SELECT SITE TYPE */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
-          <h2 className="text-lg font-medium w-1/4 text-center">Site type:</h2>
-          <select
-            value={siteType}
-            onChange={(event) => setSiteType(event.target.value)}
-            className="border p-2 rounded-sm font-medium w-1/4 text-center"
-          >
-            {station.map((s) => (
-              <option
-                key={Math.random()}
-                className="font-bold uppercase"
-                value={s}
-              >
-                {s}
-              </option>
-            ))}
-          </select>
-        </div>
-
         {/* //* DRIVER INVOLVED */}
         <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-center">
           <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/2 text-center">
