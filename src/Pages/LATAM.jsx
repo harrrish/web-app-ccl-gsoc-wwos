@@ -215,6 +215,102 @@ export default function LATAM() {
           </select>
         </div>
 
+        {/* //* SELECT SEV */}
+        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+          <h1 className="text-lg font-medium w-1/4 text-center">Severity:</h1>
+          <div className="w-1/4 flex justify-between gap-8">
+            <div className="flex gap-1 items-center">
+              <input
+                type="radio"
+                name="severity"
+                value="1"
+                id="1"
+                checked={severity === "1"}
+                onChange={(e) => setSeverity(e.target.value)}
+                className="cursor-pointer"
+              />
+              <label
+                htmlFor="1"
+                className="uppercase font-bold tracking-wider cursor-pointer"
+              >
+                1
+              </label>
+            </div>
+
+            <div className="flex gap-1 items-center">
+              <input
+                type="radio"
+                name="severity"
+                value="2"
+                id="2"
+                checked={severity === "2"}
+                onChange={(e) => setSeverity(e.target.value)}
+                className="cursor-pointer"
+              />
+              <label
+                htmlFor="2"
+                className="uppercase font-bold tracking-wider cursor-pointer"
+              >
+                2
+              </label>
+            </div>
+
+            <div className="flex gap-1 items-center">
+              <input
+                type="radio"
+                name="severity"
+                value="3"
+                id="3"
+                checked={severity === "3"}
+                onChange={(e) => setSeverity(e.target.value)}
+                className="cursor-pointer"
+              />
+              <label
+                htmlFor="3"
+                className="uppercase font-bold tracking-wider cursor-pointer"
+              >
+                3
+              </label>
+            </div>
+
+            <div className="flex gap-1 items-center">
+              <input
+                type="radio"
+                name="severity"
+                value="4"
+                id="4"
+                checked={severity === "4"}
+                onChange={(e) => setSeverity(e.target.value)}
+                className="cursor-pointer"
+              />
+              <label
+                htmlFor="4"
+                className="uppercase font-bold tracking-wider cursor-pointer"
+              >
+                4
+              </label>
+            </div>
+
+            <div className="flex gap-1 items-center">
+              <input
+                type="radio"
+                name="severity"
+                value="5"
+                id="5"
+                checked={severity === "5"}
+                onChange={(e) => setSeverity(e.target.value)}
+                className="cursor-pointer"
+              />
+              <label
+                htmlFor="5"
+                className="uppercase font-bold tracking-wider cursor-pointer"
+              >
+                5
+              </label>
+            </div>
+          </div>
+        </div>
+
         {/* //* DRIVER INVOLVED */}
         <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-center">
           <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/2 text-center">
