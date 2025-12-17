@@ -174,7 +174,6 @@ export default function LATAM() {
           </div>
         </div>
 
-        {/* //* SELECT SITE TYPE */}
         <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
           <h2 className="text-lg font-medium w-1/4 text-center">Site type:</h2>
           <select
@@ -182,36 +181,15 @@ export default function LATAM() {
             onChange={(event) => setSiteType(event.target.value)}
             className="border p-2 rounded-sm font-medium w-1/4 text-center"
           >
-            <option className="font-bold uppercase" value="AMZL">
-              AMZL
-            </option>
-            <option
-              className="font-bold uppercase"
-              value="3RD PARTY LOGISTICS 3PL"
-            >
-              3RD PARTY LOGISTICS 3PL
-            </option>
-            <option className="font-bold uppercase" value="SUB SAME DAY SSD">
-              SUB SAME DAY SSD
-            </option>
-            <option
-              className="font-bold uppercase"
-              value="Rural Super Rural RSR"
-            >
-              Rural Super Rural RSR
-            </option>
-            <option className="font-bold uppercase" value="TRADITIONAL FC">
-              TRADITIONAL FC
-            </option>
-            <option
-              className="font-bold uppercase"
-              value="Traditional Sortable AR"
-            >
-              Traditional Sortable AR
-            </option>
-            <option className="font-bold uppercase" value="Sort Center SC">
-              Sort Center SC
-            </option>
+            {station.map((s) => (
+              <option
+                key={Math.random()}
+                className="font-bold uppercase"
+                value={s}
+              >
+                {s}
+              </option>
+            ))}
           </select>
         </div>
 

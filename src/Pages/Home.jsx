@@ -6,8 +6,8 @@ export default function Home() {
       <div className="bg-white w-full sm:max-w-5xl rounded-lg shadow-lg p-12 flex flex-col items-center relative gap-10">
         {/* //* Note */}
         <h1 className="text-lg font-bold bg-sky-400 text-black px-4 py-2 rounded-sm tracking-wide">
-          NOTE: THIS IS USED ONLY FOR <span>UTR</span> INCIDENTS & DOES NOT
-          SUPPORT <span>OTR</span> INCIDENTS FOR NOW !
+          NOTE: THIS IS USED ONLY FOR <span>OTR</span> INCIDENTS & DOES NOT
+          SUPPORT <span>UTR</span> INCIDENTS FOR NOW !
         </h1>
 
         <div className="flex flex-col gap-4 items-center bg-gray-200 p-4 rounded-sm shadow-md w-3/4">
