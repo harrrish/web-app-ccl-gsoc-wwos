@@ -541,8 +541,9 @@ export default function AMET() {
           </button>
         </div>
       </div>
+
       {/* //* DISPLAY GENERATED CONTACTS */}
-      <ContactsFooter contacts={contacts} />
+      <ContactsFooter contacts={contacts} sev={severity} />
     </div>
   );
 }

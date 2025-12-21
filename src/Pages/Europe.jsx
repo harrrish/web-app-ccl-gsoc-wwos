@@ -55,7 +55,7 @@ export default function EUROPE() {
 
     if (reportedBy === "CXCM") {
       if (country === "UK") {
-        newCon.push(`sds-gsoc-flex-incident@amazon.co.uk`);
+        newCon.push(`sds-gsoc-cx-incident@amazon.co.uk`);
       } else if (country === "IE") {
         newCon.push(`sds-gsoc-cx-incident@amazon.ie`);
       } else if (country === "NL") {
@@ -674,8 +674,9 @@ export default function EUROPE() {
           </button>
         </div>
       </div>
+
       {/* //* DISPLAY GENERATED CONTACTS */}
-      <ContactsFooter contacts={contacts} />
+      <ContactsFooter contacts={contacts} sev={severity} />
     </div>
   );
 }

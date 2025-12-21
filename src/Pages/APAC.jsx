@@ -640,7 +640,7 @@ export default function APAC() {
       </div>
 
       {/* //* DISPLAY GENERATED CONTACTS */}
-      <ContactsFooter contacts={contacts} />
+      <ContactsFooter contacts={contacts} sev={severity} />
     </div>
   );
 }

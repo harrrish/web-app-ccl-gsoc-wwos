@@ -1,6 +1,17 @@
 import { handleCopyArchive } from "../data";
 
-export default function ContactsFooter({ contacts }) {
+export default function ContactsFooter({ contacts, sev }) {
+  const sevBg =
+    sev === "1"
+      ? "bg-red-900 text-white"
+      : sev === "2"
+      ? "bg-red-600 text-white"
+      : sev === "3"
+      ? "bg-yellow-500 text-black"
+      : sev === "4"
+      ? "bg-green-500"
+      : "bg-gray-300";
+
   async function handleCopy() {
     await navigator.clipboard.writeText(contacts);
     alert(" Copied to clipboard! \n\n Page will be now restored to default !");
@@ -11,7 +22,9 @@ export default function ContactsFooter({ contacts }) {
       {contacts.length > 0 && (
         <div className="flex flex-col gap-3 justify-center items-center">
           <div className="flex items-center gap-3 w-full">
-            <h1 className="w-[80%] px-4 py-2 text-sm text-gray-900 bg-gray-300 border-sky-400 rounded-sm font-bold truncate text-left">
+            <h1
+              className={`w-[80%] px-4 py-2 text-sm text-gray-900 bg-gray-300 border-sky-400 rounded-sm font-bold truncate text-left ${sevBg}`}
+            >
               wwos-gsoc-archive@amazon.com
             </h1>
             <button
@@ -21,13 +34,14 @@ export default function ContactsFooter({ contacts }) {
               Copy
             </button>
           </div>
+
           <div className="flex">
             <div className="flex flex-col gap-2 w-[80%]">
               {/* //* CONTACTS DISPLAY */}
               <div className="flex flex-wrap gap-2 w-full">
                 {contacts.map((c, i) => (
                   <span
-                    className="w-[32.5%] px-4 text-sm text-center text-gray-900 bg-gray-300 border-sky-400 rounded-sm font-bold truncate py-1"
+                    className={`w-[32.5%] px-4 text-sm text-center text-gray-900 bg-gray-300 border-sky-400 rounded-sm font-bold truncate py-1 ${sevBg}`}
                     key={i}
                     title={c}
                   >

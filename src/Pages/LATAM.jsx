@@ -677,7 +677,7 @@ export default function LATAM() {
       </div>
 
       {/* //* DISPLAY GENERATED CONTACTS */}
-      <ContactsFooter contacts={contacts} />
+      <ContactsFooter contacts={contacts} sev={severity} />
     </div>
   );
 }

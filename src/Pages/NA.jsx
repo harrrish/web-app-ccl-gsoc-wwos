@@ -147,7 +147,6 @@ export default function NA() {
       <nav className="bg-[#146EB4] w-full sm:w-[90%] rounded-sm">
         <RegionNavs region={region} />
       </nav>
-
       {/* //* FORM */}
       <div className="bg-white w-full sm:w-[90%] p-3 rounded-sm flex flex-col gap-1">
         <h1 className="text-lg text-center font-extrabold text-gray-800 flex justify-between">
@@ -788,7 +787,7 @@ export default function NA() {
       </div>
 
       {/* //* DISPLAY GENERATED CONTACTS */}
-      <ContactsFooter contacts={contacts} />
+      <ContactsFooter contacts={contacts} sev={severity} />
     </div>
   );
 }
