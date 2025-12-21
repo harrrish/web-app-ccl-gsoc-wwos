@@ -1,18 +1,20 @@
 import { NavLink } from "react-router-dom";
-import { actionItemBody, actionItemTitle } from "../data";
+import { useState } from "react";
+import ActionItem from "../Pages/ActionItem.jsx";
+import ClosingStatement from "../Pages/ClosingStatement.jsx";
 
 export default function RegionNavs({ region }) {
-  async function handleCopyTitle() {
-    await navigator.clipboard.writeText(actionItemTitle);
-    alert(`Copied "${actionItemTitle}" to clipboard`);
-  }
-  async function handleCopyBody() {
-    await navigator.clipboard.writeText(actionItemBody);
-    alert(`Copied "${actionItemBody}" to clipboard`);
-  }
+  const [showAction, setShowAction] = useState(false);
+  const [showClosing, setShowClosing] = useState(false);
 
   return (
     <div className="flex flex-col items-center gap-2 py-2">
+      {showAction && <ActionItem setShowAction={setShowAction} />}
+      {showClosing && <ClosingStatement setShowClosing={setShowClosing} />}
+      <h1 className="text-2xl bg-black w-full rounded-sm text-black text-center font-bold flex justify-between p-2 text-white">
+        <span>CCL Version: 11.12.2025 </span>
+        <span>( Please ensure the CCL version is up to date ! )</span>
+      </h1>
       <div className="flex justify-between gap-2 items-center w-full">
         <NavLink
           to={"/NA"}
@@ -70,65 +72,20 @@ export default function RegionNavs({ region }) {
         </NavLink>
       </div>
       {region && (
-        <div className="flex flex-col gap-1 w-full">
-          <div className="flex gap-1 flex-col rounded-sm">
-            <h1 className="text-center font-extrabold tracking-wider text-white rounded-sm border-2">
-              CLOSING STATEMENT
-            </h1>
-            <div className="rounded-sm flex justify-between gap-2 items-center border-2 text-white">
-              <h1 className="font-extrabold w-[20%] rounded-sm text-center py-1">
-                DSP DA
-              </h1>
-              <h1 className="text-center text-md w-[80%] rounded-sm flex flex-col p-1 bg-sky-200 text-black font-extrabold tracking-wide">
-                Thank you for reporting this incident.{" "}
-                <span>
-                  We take these reports seriously and will be escalating to
-                  additional teams for review and investigation.
-                </span>
-              </h1>
-            </div>
-            <div className="rounded-sm flex justify-between gap-2 items-center border-2 text-white">
-              <h1 className="font-extrabold w-[20%] rounded-sm text-center py-1">
-                CM/CX/US HUB DA/FLEX DP
-              </h1>
-              <h1 className="text-center text-md w-[80%] rounded-sm flex flex-col p-1 bg-sky-200 text-black font-extrabold tracking-wide">
-                <span>Thank you for reporting this incident.</span>{" "}
-                <span>
-                  We take these reports seriously and will be escalating to
-                  additional teams for review and investigation, the follow up
-                  team will give you a call in 12 hours to check on how you are
-                  doing and answer any additional questions.
-                </span>
-              </h1>
-            </div>
-          </div>
-
-          <div className="flex gap-1 items-center w-full justify-between rounded-sm">
-            {/* //* ACTION ITEM TITLE */}
-            <div className="bg-black text-white flex items-center w-[30%] justify-between rounded-sm p-2">
-              <h1 className="text-center font-bold truncate">
-                {actionItemTitle}
-              </h1>
-              <button
-                onClick={handleCopyTitle}
-                className="hover:bg-[#146EB4] p-1 tracking-widest font-bold bg-white text-black hover:text-white rounded-sm cursor-pointer text-sm"
-              >
-                COPY
-              </button>
-            </div>
-            {/* //* ACTION ITEM BODY */}
-            <div className="bg-black text-white flex items-center w-[70%] justify-between rounded-sm p-2">
-              <h1 className="text-center font-bold truncate">
-                {actionItemBody}
-              </h1>
-              <button
-                onClick={handleCopyBody}
-                className="hover:bg-[#146EB4] p-1 tracking-widest font-bold bg-white text-black hover:text-white rounded-sm cursor-pointer text-sm"
-              >
-                COPY
-              </button>
-            </div>
-          </div>
+        <div className="flex gap-1 w-full">
+          <button
+            onClick={() => setShowAction(true)}
+            className="w-1/2 bg-yellow-400 text-black p-2 rounded-sm font-medium hover:bg-sky-400 hover:text-white tracking-wide cursor-pointer hover:underline"
+          >
+            View <span className="uppercase font-extrabold">Action Item</span>
+          </button>
+          <button
+            onClick={() => setShowClosing(true)}
+            className="w-1/2 bg-yellow-400 text-black p-2 rounded-sm font-medium hover:bg-sky-400 hover:text-white tracking-wide cursor-pointer hover:underline"
+          >
+            View
+            <span className="uppercase font-extrabold"> Closing Statement</span>
+          </button>
         </div>
       )}
     </div>
