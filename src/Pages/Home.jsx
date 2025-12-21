@@ -10,7 +10,7 @@ export default function Home() {
           SUPPORT <span>UTR</span> INCIDENTS FOR NOW !
         </h1>
 
-        <div className="flex flex-col gap-4 items-center bg-gray-200 p-4 rounded-sm shadow-md w-3/4">
+        <div className="flex flex-col gap-4 items-center bg-gray-200 p-4 rounded-sm shadow-md w-full">
           <h1 className="text-3xl font-extrabold text-[#146EB4] tracking-wide">
             WWOS - GSOC
           </h1>
