@@ -76,9 +76,9 @@ export default function ContactsFooter({ contacts, sev }) {
                 Copy Contacts
               </button>
             </div>
-            <h1 className="font-bold text-black">
+            <h1 className="font-medium text-gray-600">
               For any feedback or suggestions please out reach to
-              harisss@amazon.com
+              <span className="font-bold text-black">harisss@amazon.com</span>!
             </h1>
           </div>
         )}

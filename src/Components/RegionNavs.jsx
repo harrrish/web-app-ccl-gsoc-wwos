@@ -8,13 +8,14 @@ export default function RegionNavs({ region }) {
   const [showClosing, setShowClosing] = useState(false);
 
   return (
-    <div className="flex flex-col items-center gap-2 py-2">
+    <div className="flex flex-col items-center gap-2 py-2 w-full">
       {showAction && <ActionItem setShowAction={setShowAction} />}
       {showClosing && <ClosingStatement setShowClosing={setShowClosing} />}
-      <h1 className="text-2xl bg-black w-full rounded-sm text-black text-center font-bold flex justify-between p-2 text-white">
-        <span>CCL Version: 11.12.2025 </span>
-        <span>( Please ensure the CCL version is up to date ! )</span>
+
+      <h1 className="text-lg w-full rounded-sm bg-green-600 text-white text-center font-bold flex justify-center gap-2 p-2 tracking-wider">
+        Consolidated Contacts List Version: 11.12.2025
       </h1>
+
       <div className="flex justify-between gap-2 items-center w-full">
         <NavLink
           to={"/NA"}
