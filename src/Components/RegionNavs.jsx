@@ -76,13 +76,13 @@ export default function RegionNavs({ region }) {
         <div className="flex gap-1 w-full">
           <button
             onClick={() => setShowAction(true)}
-            className="w-1/2 bg-yellow-400 text-black p-2 rounded-sm font-medium hover:bg-sky-400 hover:text-white tracking-wide cursor-pointer hover:underline"
+            className="w-1/2 bg-black p-2 rounded-sm font-medium hover:bg-sky-400 hover:text-white text-white tracking-wide cursor-pointer hover:underline"
           >
             View <span className="uppercase font-extrabold">Action Item</span>
           </button>
           <button
             onClick={() => setShowClosing(true)}
-            className="w-1/2 bg-yellow-400 text-black p-2 rounded-sm font-medium hover:bg-sky-400 hover:text-white tracking-wide cursor-pointer hover:underline"
+            className="w-1/2 bg-black p-2 rounded-sm font-medium hover:bg-sky-400 hover:text-white text-white tracking-wide cursor-pointer hover:underline"
           >
             View
             <span className="uppercase font-extrabold"> Closing Statement</span>
