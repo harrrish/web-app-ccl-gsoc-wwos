@@ -13,7 +13,7 @@ export default function RegionNavs({ region }) {
       {showClosing && <ClosingStatement setShowClosing={setShowClosing} />}
 
       <h1 className="text-lg w-full rounded-sm bg-green-600 text-white text-center font-bold flex justify-center gap-2 p-2 tracking-wider">
-        Consolidated Contacts List Version: 11.12.2025
+        Consolidated Contacts List Version: 11.26.2025
       </h1>
 
       <div className="flex justify-between gap-2 items-center w-full">

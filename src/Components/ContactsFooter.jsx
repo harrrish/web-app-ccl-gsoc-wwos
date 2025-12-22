@@ -41,7 +41,7 @@ export default function ContactsFooter({ contacts, sev }) {
           <div className="flex flex-col gap-3 justify-center items-center">
             <div className="flex items-center gap-3 w-full">
               <h1
-                className={`w-[80%] px-4 py-2 text-sm text-gray-900 bg-gray-300 border-sky-400 rounded-sm font-bold truncate text-left ${sevBg}`}
+                className={`w-[80%] px-4 py-2 text-sm text-gray-900 bg-gray-300 border-sky-400 rounded-sm font-bold truncate text-left`}
               >
                 wwos-gsoc-archive@amazon.com
               </h1>
