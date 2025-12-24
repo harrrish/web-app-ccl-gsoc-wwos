@@ -644,48 +644,50 @@ export default function NA() {
         </div>
 
         {/* //* DOT REGULATED VEHICLE */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
-          <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/4 text-center">
-            DOT Regulated Vehicle:
-          </h2>
-          <div className="w-1/4 flex justify-center gap-8">
-            <div className="flex gap-1 items-center">
-              <input
-                type="radio"
-                name="dotRegulated"
-                value="YES"
-                id="YES_dotRegulated"
-                checked={dotRegulated === "YES"}
-                onChange={(e) => setDotRegulated(e.target.value)}
-                className="cursor-pointer"
-              />
-              <label
-                htmlFor="YES_dotRegulated"
-                className="uppercase font-bold tracking-wider cursor-pointer"
-              >
-                Yes
-              </label>
-            </div>
+        {driverInvolved === "DSP" && (
+          <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+            <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/4 text-center">
+              DOT Regulated Vehicle:
+            </h2>
+            <div className="w-1/4 flex justify-center gap-8">
+              <div className="flex gap-1 items-center">
+                <input
+                  type="radio"
+                  name="dotRegulated"
+                  value="YES"
+                  id="YES_dotRegulated"
+                  checked={dotRegulated === "YES"}
+                  onChange={(e) => setDotRegulated(e.target.value)}
+                  className="cursor-pointer"
+                />
+                <label
+                  htmlFor="YES_dotRegulated"
+                  className="uppercase font-bold tracking-wider cursor-pointer"
+                >
+                  Yes
+                </label>
+              </div>
 
-            <div className="flex gap-1 items-center">
-              <input
-                type="radio"
-                name="dotRegulated"
-                value="NO"
-                id="NO_dotRegulated"
-                checked={dotRegulated === "NO"}
-                onChange={(e) => setDotRegulated(e.target.value)}
-                className="cursor-pointer"
-              />
-              <label
-                htmlFor="NO_dotRegulated"
-                className="uppercase font-bold tracking-wider cursor-pointer"
-              >
-                No
-              </label>
+              <div className="flex gap-1 items-center">
+                <input
+                  type="radio"
+                  name="dotRegulated"
+                  value="NO"
+                  id="NO_dotRegulated"
+                  checked={dotRegulated === "NO"}
+                  onChange={(e) => setDotRegulated(e.target.value)}
+                  className="cursor-pointer"
+                />
+                <label
+                  htmlFor="NO_dotRegulated"
+                  className="uppercase font-bold tracking-wider cursor-pointer"
+                >
+                  No
+                </label>
+              </div>
             </div>
           </div>
-        </div>
+        )}
 
         {/* //* DISCRIMINATION */}
         <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
@@ -732,48 +734,50 @@ export default function NA() {
         </div>
 
         {/* //* VEHICLE MALFUNCTION */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
-          <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/2 text-center">
-            Vehicle Malfunction (Amazon-branded):
-          </h2>
-          <div className="w-1/2 flex justify-center gap-8">
-            <div className="flex gap-1 items-center">
-              <input
-                type="radio"
-                name="vehicleMalFunction"
-                value="YES"
-                id="YES_vehicleMalfunction"
-                checked={vehicleMalFunction === "YES"}
-                onChange={(e) => setVehicleMalFunction(e.target.value)}
-                className="cursor-pointer"
-              />
-              <label
-                htmlFor="YES_vehicleMalfunction"
-                className="uppercase font-bold tracking-wider cursor-pointer"
-              >
-                Yes
-              </label>
-            </div>
+        {driverInvolved === "DSP" && (
+          <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+            <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/2 text-center">
+              Vehicle Malfunction (Amazon-branded):
+            </h2>
+            <div className="w-1/2 flex justify-center gap-8">
+              <div className="flex gap-1 items-center">
+                <input
+                  type="radio"
+                  name="vehicleMalFunction"
+                  value="YES"
+                  id="YES_vehicleMalfunction"
+                  checked={vehicleMalFunction === "YES"}
+                  onChange={(e) => setVehicleMalFunction(e.target.value)}
+                  className="cursor-pointer"
+                />
+                <label
+                  htmlFor="YES_vehicleMalfunction"
+                  className="uppercase font-bold tracking-wider cursor-pointer"
+                >
+                  Yes
+                </label>
+              </div>
 
-            <div className="flex gap-1 items-center">
-              <input
-                type="radio"
-                name="vehicleMalFunction"
-                value="NO"
-                id="NO_vehicleMalfunction"
-                checked={vehicleMalFunction === "NO"}
-                onChange={(e) => setVehicleMalFunction(e.target.value)}
-                className="cursor-pointer"
-              />
-              <label
-                htmlFor="NO_vehicleMalfunction"
-                className="uppercase font-bold tracking-wider cursor-pointer"
-              >
-                No
-              </label>
+              <div className="flex gap-1 items-center">
+                <input
+                  type="radio"
+                  name="vehicleMalFunction"
+                  value="NO"
+                  id="NO_vehicleMalfunction"
+                  checked={vehicleMalFunction === "NO"}
+                  onChange={(e) => setVehicleMalFunction(e.target.value)}
+                  className="cursor-pointer"
+                />
+                <label
+                  htmlFor="NO_vehicleMalfunction"
+                  className="uppercase font-bold tracking-wider cursor-pointer"
+                >
+                  No
+                </label>
+              </div>
             </div>
           </div>
-        </div>
+        )}
 
         {/* //* GENERATE CONTACTS BUTTON */}
         <div className="flex gap-2">
