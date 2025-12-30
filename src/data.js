@@ -10,6 +10,7 @@ export const station = [
   "EXCHANGE POINT XPT",
   "AMXL",
   "INBOUND CROSS DOCK IXD",
+  "AMAZON FRESH",
 ];
 
 export const archiveEmail = "wwos-gsoc-archive@amazon.com";
