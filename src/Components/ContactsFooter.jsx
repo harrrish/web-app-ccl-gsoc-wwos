@@ -77,8 +77,8 @@ export default function ContactsFooter({ contacts, sev }) {
               </button>
             </div>
             <h1 className="font-medium text-gray-600">
-              For any feedback or suggestions please out reach to
-              <span className="font-bold text-black">harisss@amazon.com</span>!
+              For any feedback or suggestions please out reach to{" "}
+              <span className="font-bold text-black">harisss@amazon.com</span> !
             </h1>
           </div>
         )}
