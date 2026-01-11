@@ -59,6 +59,8 @@ export default function NA() {
       } else if (reportedBy === "CXCM") {
         if (language === "ENGLISH")
           newCon.push("sds-gsoc-cx-incident@amazon.com");
+        if (driverInvolved === "FLEX")
+          newCon.push("sds-gsoc-flex-incident@amazon.com");
         if (language === "SPANISH")
           newCon.push("sds-gsoc-cx-incident@amazon.com");
       } else if (reportedBy === "HubDA") {
@@ -78,6 +80,8 @@ export default function NA() {
       } else if (reportedBy === "CXCM") {
         if (language === "ENGLISH")
           newCon.push("sds-gsoc-cx-incident@amazon.ca");
+        if (driverInvolved === "FLEX")
+          newCon.push("sds-gsoc-flex-incident@amazon.com");
         if (language === "SPANISH")
           newCon.push("sds-gsoc-cx-incident@amazon.com");
       }
