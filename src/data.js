@@ -12,6 +12,7 @@ export const station = [
   "INBOUND CROSS DOCK IXD",
   "AMAZON FRESH",
   "WHOLE FOODS MARKET WFM",
+  "PRIMENOW PN",
 ];
 
 export const archiveEmail = "wwos-gsoc-archive@amazon.com";
