@@ -120,14 +120,12 @@ export default function LATAM() {
   };
 
   return (
-    <div className="min-h-screen bg-[#146EB4] to-blue-200 flex font-f1 flex-col items-center gap-2">
+    <div className="min-h-screen bg-black to-blue-200 flex font-f1 flex-col items-center gap-2 p-8">
       {/* //* NAVBAR */}
-      <nav className="bg-[#146EB4] w-full sm:w-[90%] rounded-sm">
-        <RegionNavs region={region} />
-      </nav>
+      <RegionNavs region={region} />
 
       {/* //* FORM */}
-      <div className="bg-white w-full sm:w-[90%]  mx-auto p-3 rounded-sm shadow-xl space-y-2">
+      <div className="bg-white w-full mx-auto p-3 rounded-sm shadow-xl space-y-2">
         <h1 className="text-lg text-center font-extrabold text-gray-800 flex justify-between">
           LATAM <span className="text-lg font-bold">(MX / BR)</span>
         </h1>

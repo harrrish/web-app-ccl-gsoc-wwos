@@ -1,88 +1,102 @@
 import { handleCopyArchive } from "../data";
+import { MdContentCopy, MdEmail, MdContacts, MdWarning } from "react-icons/md";
+import { FaExclamationTriangle, FaCheckCircle } from "react-icons/fa";
+import { HiShieldCheck } from "react-icons/hi";
 
 export default function ContactsFooter({ contacts, sev }) {
   const sevBg =
     sev === "1"
-      ? "bg-red-900 text-white"
+      ? "bg-red-900 text-white border-red-700"
       : sev === "2"
-      ? "bg-red-600 text-white"
+      ? "bg-red-600 text-white border-red-500"
       : sev === "3"
-      ? "bg-yellow-500 text-black"
+      ? "bg-yellow-500 text-black border-yellow-400"
       : sev === "4"
-      ? "bg-green-500"
-      : "bg-gray-300";
+      ? "bg-green-600 text-white border-green-500"
+      : "bg-gray-500 text-white border-gray-400";
 
   async function handleCopy() {
     await navigator.clipboard.writeText(contacts);
     alert(" Copied to clipboard! \n\n Page will be now restored to default !");
     window.location.reload();
   }
+
   return (
-    <footer className="bg-white p-2 w-full sm:w-[90%] rounded-sm flex flex-col gap-2">
-      <div className="flex justify-between">
-        <h1 className="uppercase tracking-widest rounded-sm font-bold w-[18%] text-center bg-red-900 text-white">
-          Sev1
-        </h1>
-        <h1 className="uppercase tracking-widest rounded-sm font-bold w-[18%] text-center bg-red-600 text-white">
-          Sev2
-        </h1>
-        <h1 className="uppercase tracking-widest rounded-sm font-bold w-[18%] text-center bg-yellow-500 text-black">
-          Sev3
-        </h1>
-        <h1 className="uppercase tracking-widest rounded-sm font-bold w-[18%] text-center bg-green-500">
-          Sev4
-        </h1>
-        <h1 className="uppercase tracking-widest rounded-sm font-bold w-[18%] text-center bg-gray-300">
-          Sev5
-        </h1>
+    <footer className="bg-[var(--color-bg2)] border border-[var(--color-border)] p-4 w-full sm:w-full rounded-md flex flex-col gap-4 shadow-xl shadow-black/30 font-f1">
+      <div className="grid grid-cols-5 gap-2 w-full text-xs sm:text-sm font-f4 tracking-widest text-center">
+        <div className="flex items-center justify-center gap-1 bg-red-900 text-white rounded-md py-2 border border-red-700 shadow-md">
+          <FaExclamationTriangle size={14} />
+          SEV1
+        </div>
+        <div className="flex items-center justify-center gap-1 bg-red-600 text-white rounded-md py-2 border border-red-500 shadow-md">
+          <MdWarning size={14} />
+          SEV2
+        </div>
+        <div className="flex items-center justify-center gap-1 bg-yellow-500 text-black rounded-md py-2 border border-yellow-400 shadow-md">
+          <HiShieldCheck size={14} />
+          SEV3
+        </div>
+        <div className="flex items-center justify-center gap-1 bg-green-600 text-white rounded-md py-2 border border-green-500 shadow-md">
+          <FaCheckCircle size={14} />
+          SEV4
+        </div>
+        <div className="flex items-center justify-center gap-1 bg-gray-500 text-white rounded-md py-2 border border-gray-400 shadow-md">
+          <MdContacts size={14} />
+          SEV5
+        </div>
       </div>
-      <div>
-        {contacts.length > 0 && (
-          <div className="flex flex-col gap-3 justify-center items-center">
-            <div className="flex items-center gap-3 w-full">
-              <h1
-                className={`w-[80%] px-4 py-2 text-sm text-gray-900 bg-gray-300 border-sky-400 rounded-sm font-bold truncate text-left`}
-              >
+
+      {contacts.length > 0 && (
+        <div className="flex flex-col gap-4 justify-center items-center w-full">
+          <div className="flex flex-col sm:flex-row items-center gap-3 w-full">
+            <div className="flex items-center gap-2 w-full sm:w-[80%] bg-[var(--color-bg3)] border border-[var(--color-border)] rounded-md px-4 py-3 shadow-md">
+              <MdEmail
+                className="text-[var(--color-blue-glow)] flex-shrink-0"
+                size={18}
+              />
+              <h1 className="text-sm text-[var(--color-f1)] font-f3 truncate">
                 wwos-gsoc-archive@amazon.com
               </h1>
-              <button
-                onClick={handleCopyArchive}
-                className="w-[20%] p-1 text-white bg-[#146EB4] hover:text-[#146EB4] rounded-sm duration-300 cursor-pointer border-2 border-[#146EB4] hover:bg-white font-medium tracking-wide"
-              >
-                Copy
-              </button>
+            </div>
+            <button
+              onClick={handleCopyArchive}
+              className="flex items-center justify-center gap-2 w-full sm:w-[20%] px-4 py-3 text-white bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] rounded-md duration-300 cursor-pointer border border-[var(--color-primary)] hover:border-[var(--color-blue-glow)] font-f3 tracking-wide shadow-md hover:shadow-[var(--color-primary)]/30"
+            >
+              <MdContentCopy size={16} />
+              Copy
+            </button>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-3 w-full">
+            <div className="flex flex-wrap gap-2 w-full sm:w-[80%]">
+              {contacts.map((c, i) => (
+                <span
+                  className={`flex items-center justify-center px-3 py-2 text-xs sm:text-sm text-center font-f3 truncate rounded-md border shadow-sm ${sevBg}`}
+                  key={i}
+                  title={c}
+                >
+                  {c}
+                </span>
+              ))}
             </div>
 
-            <div className="flex">
-              <div className="flex flex-col gap-2 w-[80%]">
-                {/* //* CONTACTS DISPLAY */}
-                <div className="flex flex-wrap gap-2 w-full">
-                  {contacts.map((c, i) => (
-                    <span
-                      className={`w-[32.5%] px-4 text-sm text-center text-gray-900 bg-gray-300 border-sky-400 rounded-sm font-bold truncate py-1 ${sevBg}`}
-                      key={i}
-                      title={c}
-                    >
-                      {c}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              {/* //* COPY CONTACTS */}
-              <button
-                onClick={() => handleCopy(contacts)}
-                className="w-[20%] text-white bg-[#146EB4] hover:text-[#146EB4] rounded-sm duration-300 cursor-pointer border-2 border-[#146EB4] hover:bg-white font-medium tracking-wide"
-              >
-                Copy Contacts
-              </button>
-            </div>
-            <h1 className="font-medium text-gray-600">
-              For any feedback or suggestions please out reach to{" "}
-              <span className="font-bold text-black">harisss@amazon.com</span> !
-            </h1>
+            <button
+              onClick={() => handleCopy(contacts)}
+              className="flex items-center justify-center gap-2 w-full sm:w-[20%] px-4 py-3 text-white bg-[var(--color-success)] hover:bg-[var(--color-success-hover)] rounded-md duration-300 cursor-pointer border border-[var(--color-success)] hover:border-[var(--color-green-glow)] font-f3 tracking-wide shadow-md hover:shadow-[var(--color-success)]/30"
+            >
+              <MdContentCopy size={16} />
+              Copy Contacts
+            </button>
           </div>
-        )}
-      </div>
+
+          <div className="text-center text-sm font-f2 text-[var(--color-f2)] border-t border-[var(--color-border-soft)] pt-3 w-full">
+            For feedback or suggestions contact
+            <span className="font-f3 text-[var(--color-primary)] ml-1 hover:text-[var(--color-blue-glow)] transition-colors duration-300 cursor-pointer">
+              harisss@amazon.com
+            </span>
+          </div>
+        </div>
+      )}
     </footer>
   );
 }

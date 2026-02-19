@@ -122,14 +122,12 @@ export default function EUROPE() {
   };
 
   return (
-    <div className="min-h-screen bg-[#146EB4] to-blue-200 flex font-f1 flex-col items-center gap-2">
+    <div className="min-h-screen bg-black to-blue-200 flex font-f1 flex-col items-center gap-2 p-8">
       {/* //* NAVBAR */}
-      <nav className="bg-[#146EB4] w-full sm:w-[90%] rounded-sm">
-        <RegionNavs region={region} />
-      </nav>
+      <RegionNavs region={region} />
 
       {/* //* FORM */}
-      <div className="bg-white w-full sm:w-[90%] p-3 rounded-sm flex flex-col gap-1">
+      <div className="bg-white w-full p-3 rounded-sm flex flex-col gap-1">
         <h1 className="text-lg text-center font-extrabold text-gray-800 flex justify-between">
           EUROPE{" "}
           <span className="text-lg font-bold">

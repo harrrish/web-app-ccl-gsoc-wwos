@@ -4,11 +4,11 @@ import { useLocation } from "react-router-dom";
 import ContactsFooter from "../Components/ContactsFooter";
 import { station } from "../data";
 
-export default function AMET() {
+export default function EUROPE() {
   const { pathname } = useLocation();
   const region = pathname.split("/")[1];
 
-  const [country, setCountry] = useState("AE");
+  const [country, setCountry] = useState("UK");
   const [siteType, setSiteType] = useState("AMZL");
 
   const [severity, setSeverity] = useState("5");
@@ -26,59 +26,67 @@ export default function AMET() {
     contacts.length = 0;
     const newCon = [];
 
-    //* EUROPE SITE-TYPE SEV#
-    newCon.push(`EUROPE ${siteType} SEV${severity === "5" ? "4" : severity}`);
-
     //* COUNTRY SITE-TYPE SEV#
     newCon.push(
       `${country} ${siteType} SEV${severity === "5" ? "4" : severity}`,
     );
 
+    //* EUROPE SITE-TYPE SEV#
+    newCon.push(`EUROPE ${siteType} SEV${severity === "5" ? "4" : severity}`);
+
     //* PR TRANSPORTATION
     newCon.push(`${country} PR TRANSPORTATION`);
-
-    //* MIDDLE EAST SEV#
-    newCon.push(`MIDDLE EAST SEV${severity === "5" ? "4" : severity}`);
 
     //* DRIVER INVOLVED
     newCon.push(
       `${country} ${driverInvolved} SEV${severity === "5" ? "4" : severity}`,
     );
 
+    if (country === "UK" || country === "IE") {
+      newCon.push(`UK IE SEV${severity}`);
+    } else newCon.push(`CEU SEV${severity}`);
+
     //* REPORTED BY
+    if (country === "UK" || country === "IE") {
+      if (reportedBy === "DP") {
+        newCon.push(`sds-gsoc-flex-incident@amazon.co.uk`);
+      }
+    }
 
-    if (
-      reportedBy === "CXCMKnownDA" ||
-      (reportedBy === "HubDA" && country === "AE")
-    )
-      newCon.push("sds-gsoc-driver-potentialharm@amazon.ae");
-    else if (
-      reportedBy === "CXCMKnownDA" ||
-      (reportedBy === "HubDA" && country === "SA")
-    )
-      newCon.push("sds-gsoc-driver-potentialharm@amazon.sa");
-    else if (
-      reportedBy === "CXCMKnownDA" ||
-      (reportedBy === "HubDA" && country === "EG")
-    )
-      newCon.push("sds-gsoc-driver-potentialharm@amazon.eg");
-    else if (
-      reportedBy === "CXCMKnownDA" ||
-      (reportedBy === "HubDA" && country === "TR")
-    )
-      newCon.push("sds-gsoc-driver-potentialharm@amazon.com.tr");
-    else if (reportedBy === "CXCM" && country === "AE")
-      newCon.push("sds-gsoc-cx-incident@amazon.ae");
-    else if (reportedBy === "CXCM" && country === "SA")
-      newCon.push("sds-gsoc-cx-incident@amazon.sa");
-    else if (reportedBy === "CXCM" && country === "EG")
-      newCon.push("sds-gsoc-cx-incident@amazon.eg");
-    else if (reportedBy === "CXCM" && country === "TR")
-      newCon.push("sds-gsoc-cx-incident@amazon.com.tr");
+    if (reportedBy === "CXCM") {
+      if (country === "UK") {
+        newCon.push(`sds-gsoc-cx-incident@amazon.co.uk`);
+      } else if (country === "IE") {
+        newCon.push(`sds-gsoc-cx-incident@amazon.ie`);
+      } else if (country === "NL") {
+        newCon.push(`sds-gsoc-cx-incident@amazon.nl`);
+      } else if (country === "DE") {
+        newCon.push(`sds-gsoc-cx-incident@amazon.de`);
+      } else if (country === "ES") {
+        newCon.push(`sds-gsoc-cx-incident@amazon.es`);
+      } else if (country === "FR") {
+        newCon.push(`sds-gsoc-cx-incident@amazon.fr`);
+      } else if (country === "IT") {
+        newCon.push(`sds-gsoc-cx-incident@amazon.it`);
+      }
+    }
 
-    //* HAZARDOUS
-    if (hazardous === "YES") {
-      newCon.push(`EMEA HAZMAT SEV${severity === "5" ? "4" : severity}`);
+    if (reportedBy === "CXCMKnownDA" || reportedBy === "CXCMKnownHubDA") {
+      if (country === "UK") {
+        newCon.push(`sds-gsoc-driver-potentialharm@amazon.co.uk`);
+      } else if (country === "IE") {
+        newCon.push(`sds-gsoc-driver-potentialharm@amazon.ie`);
+      } else if (country === "NL") {
+        newCon.push(`sds-gsoc-driver-potentialharm@amazon.nl`);
+      } else if (country === "DE") {
+        newCon.push(`sds-gsoc-driver-potentialharm@amazon.de`);
+      } else if (country === "ES") {
+        newCon.push(`sds-gsoc-driver-potentialharm@amazon.es`);
+      } else if (country === "FR") {
+        newCon.push(`sds-gsoc-driver-potentialharm@amazon.fr`);
+      } else if (country === "IT") {
+        newCon.push(`sds-gsoc-driver-potentialharm@amazon.it`);
+      }
     }
 
     //* CX FACING IMPACT
@@ -87,14 +95,18 @@ export default function AMET() {
       newCon.push(`cs-gcc-all@amazon.com`);
     }
 
+    //* HAZARDOUS
+    if (hazardous === "YES") {
+      newCon.push("NA HAZMAT SUPPORT GROUP");
+      newCon.push("DANGEROUS GOODS SUPPORT GROUP");
+    }
+
     //* DISCRIMINATION
     if (discrimination === "YES") newCon.push("DISCRIMINATION SUPPORT GROUP");
 
-    //* SEV1
-    if (severity === "1") newCon.push("EMEA SEV1");
-
-    //* SEV2
-    if (severity === "2") newCon.push("EMEA SEV2");
+    if (severity === "1" || severity === "2") {
+      newCon.push(`EMEA SEV${severity}`);
+    }
 
     //* ===========================> SMILEY CONTACTS
     newCon.push("GLOBAL OTR SAFETY SUPPORT GROUP");
@@ -104,41 +116,46 @@ export default function AMET() {
     newCon.push("RISK GLOBAL LAST MILE");
     newCon.push("EUROPE ROC SUPPORT GROUP");
     newCon.push("EMEA LAST MILE OPS DISRUPTION");
-    newCon.push("APAC AMET INTERNAL COMMS SUPPORT GROUP");
+    newCon.push("EUROPE INTERNAL COMMS SUPPORT GROUP");
 
     setContacts([...newCon]);
   };
 
   return (
-    <div className="min-h-screen bg-black to-blue-200 flex font-f1 flex-col items-center gap-2 p-8">
+    <div className="min-h-screen bg-[#146EB4] to-blue-200 flex font-f1 flex-col items-center gap-2">
       {/* //* NAVBAR */}
-      <RegionNavs region={region} />
+      <nav className="bg-[#146EB4] w-full sm:w-[90%] rounded-md">
+        <RegionNavs region={region} />
+      </nav>
 
       {/* //* FORM */}
-      <div className="bg-white w-full mx-auto p-3 rounded-sm shadow-xl space-y-2">
+      <div className="bg-white w-full sm:w-[90%] p-3 rounded-md flex flex-col gap-1">
         <h1 className="text-lg text-center font-extrabold text-gray-800 flex justify-between">
-          AMET <span className="text-lg font-bold">(AE / SA / EG / TR)</span>
+          EUROPE{" "}
+          <span className="text-lg font-bold">
+            (UK / IE / NL / DE / ES / FR / IT / AT / PL / LX / CZ)
+          </span>
         </h1>
 
         {/* //* SELECT COUNTRY */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
           <h1 className="text-lg font-medium w-1/4 text-center">Country:</h1>
           <div className="w-1/4 flex justify-center gap-8">
             <div className="flex gap-1 items-center">
               <input
                 type="radio"
                 name="country"
-                value="AE"
-                id="AE"
-                checked={country === "AE"}
+                value="UK"
+                id="UK"
+                checked={country === "UK"}
                 onChange={(e) => setCountry(e.target.value)}
                 className="cursor-pointer"
               />
               <label
-                htmlFor="AE"
+                htmlFor="UK"
                 className="uppercase font-bold tracking-wider cursor-pointer"
               >
-                AE
+                UK
               </label>
             </div>
 
@@ -146,17 +163,17 @@ export default function AMET() {
               <input
                 type="radio"
                 name="country"
-                value="SA"
-                id="SA"
-                checked={country === "SA"}
+                value="IE"
+                id="IE"
+                checked={country === "IE"}
                 onChange={(e) => setCountry(e.target.value)}
                 className="cursor-pointer"
               />
               <label
-                htmlFor="SA"
+                htmlFor="IE"
                 className="uppercase font-bold tracking-wider cursor-pointer"
               >
-                SA
+                IE
               </label>
             </div>
 
@@ -164,17 +181,17 @@ export default function AMET() {
               <input
                 type="radio"
                 name="country"
-                value="EG"
-                id="EG"
-                checked={country === "EG"}
+                value="NL"
+                id="NL"
+                checked={country === "NL"}
                 onChange={(e) => setCountry(e.target.value)}
                 className="cursor-pointer"
               />
               <label
-                htmlFor="EG"
+                htmlFor="NL"
                 className="uppercase font-bold tracking-wider cursor-pointer"
               >
-                EG
+                NL
               </label>
             </div>
 
@@ -182,29 +199,137 @@ export default function AMET() {
               <input
                 type="radio"
                 name="country"
-                value="TR"
-                id="TR"
-                checked={country === "TR"}
+                value="DE"
+                id="DE"
+                checked={country === "DE"}
                 onChange={(e) => setCountry(e.target.value)}
                 className="cursor-pointer"
               />
               <label
-                htmlFor="TR"
+                htmlFor="DE"
                 className="uppercase font-bold tracking-wider cursor-pointer"
               >
-                TR
+                DE
+              </label>
+            </div>
+
+            <div className="flex gap-1 items-center">
+              <input
+                type="radio"
+                name="country"
+                value="ES"
+                id="ES"
+                checked={country === "ES"}
+                onChange={(e) => setCountry(e.target.value)}
+                className="cursor-pointer"
+              />
+              <label
+                htmlFor="ES"
+                className="uppercase font-bold tracking-wider cursor-pointer"
+              >
+                ES
+              </label>
+            </div>
+
+            <div className="flex gap-1 items-center">
+              <input
+                type="radio"
+                name="country"
+                value="FR"
+                id="FR"
+                checked={country === "FR"}
+                onChange={(e) => setCountry(e.target.value)}
+                className="cursor-pointer"
+              />
+              <label
+                htmlFor="FR"
+                className="uppercase font-bold tracking-wider cursor-pointer"
+              >
+                FR
+              </label>
+            </div>
+
+            <div className="flex gap-1 items-center">
+              <input
+                type="radio"
+                name="country"
+                value="IT"
+                id="IT"
+                checked={country === "IT"}
+                onChange={(e) => setCountry(e.target.value)}
+                className="cursor-pointer"
+              />
+              <label
+                htmlFor="IT"
+                className="uppercase font-bold tracking-wider cursor-pointer"
+              >
+                IT
+              </label>
+            </div>
+
+            <div className="flex gap-1 items-center">
+              <input
+                type="radio"
+                name="country"
+                value="AT"
+                id="AT"
+                checked={country === "AT"}
+                onChange={(e) => setCountry(e.target.value)}
+                className="cursor-pointer"
+              />
+              <label
+                htmlFor="AT"
+                className="uppercase font-bold tracking-wider cursor-pointer"
+              >
+                AT
+              </label>
+            </div>
+
+            <div className="flex gap-1 items-center">
+              <input
+                type="radio"
+                name="country"
+                value="LU"
+                id="LU"
+                checked={country === "LU"}
+                onChange={(e) => setCountry(e.target.value)}
+                className="cursor-pointer"
+              />
+              <label
+                htmlFor="LU"
+                className="uppercase font-bold tracking-wider cursor-pointer"
+              >
+                LU
+              </label>
+            </div>
+
+            <div className="flex gap-1 items-center">
+              <input
+                type="radio"
+                name="country"
+                value="CZ"
+                id="CZ"
+                checked={country === "CZ"}
+                onChange={(e) => setCountry(e.target.value)}
+                className="cursor-pointer"
+              />
+              <label
+                htmlFor="CZ"
+                className="uppercase font-bold tracking-wider cursor-pointer"
+              >
+                CZ
               </label>
             </div>
           </div>
         </div>
 
         {/* //* SELECT SITE TYPE */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
           <h2 className="text-lg font-medium w-1/4 text-center">Site type:</h2>
           <select
             value={siteType}
             onChange={(event) => setSiteType(event.target.value)}
-            className="border p-2 rounded-sm font-medium w-1/4 text-center"
+            className="border p-2 rounded-md font-medium w-1/4 text-center"
           >
             {station.map((s) => (
               <option
@@ -219,7 +344,7 @@ export default function AMET() {
         </div>
 
         {/* //* SELECT SEV */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
           <h1 className="text-lg font-medium w-1/4 text-center">Severity:</h1>
           <div className="w-1/4 flex justify-between gap-8">
             <div className="flex gap-1 items-center">
@@ -315,7 +440,7 @@ export default function AMET() {
         </div>
 
         {/* //* DRIVER INVOLVED */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-center">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-center">
           <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/2 text-center">
             Driver involved:
           </h2>
@@ -337,6 +462,7 @@ export default function AMET() {
                 DSP
               </label>
             </div>
+
             <div className="flex gap-1 items-center">
               <input
                 type="radio"
@@ -376,29 +502,38 @@ export default function AMET() {
         </div>
 
         {/* //* REPORTED BY */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
           <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/4 text-center">
-            Reported by:
+            Reported By:
           </h2>
           <select
             value={reportedBy}
             onChange={(event) => setReportedBy(event.target.value)}
-            className="border p-2 rounded-sm font-medium w-1/4 text-center"
+            className="border p-2 rounded-md font-medium w-1/4 text-center"
           >
             <option className="font-medium" value="DA">
-              DSP DA / HUB DA (CX/CM is Unknown)
+              DSP DA (CX/CM is Unknown)
+            </option>
+            <option className="font-medium" value="DP">
+              Flex DP
             </option>
             <option className="font-medium" value="CXCMKnownDA">
-              DSP DA / HUB DA (CX/CM is Known)
+              DSP DA (CX/CM is Known)
             </option>
             <option className="font-medium" value="CXCM">
               CX/CM
+            </option>
+            <option className="font-medium" value="HubDA">
+              Hub DA
+            </option>
+            <option className="font-medium" value="CXCMKnownHubDA">
+              Hub DA (CX/CM is Known)
             </option>
           </select>
         </div>
 
         {/* //* CX FACING IMPACT */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
           <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/4 text-center">
             Customer Facing Impact:
           </h2>
@@ -442,7 +577,7 @@ export default function AMET() {
         </div>
 
         {/* //* Hazardous Material */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
           <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/4 text-center">
             Hazardous Material:
           </h2>
@@ -486,7 +621,7 @@ export default function AMET() {
         </div>
 
         {/* //* DISCRIMINATION */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
           <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/4 text-center">
             Discrimination (hate-bias):
           </h2>
@@ -533,7 +668,7 @@ export default function AMET() {
           {/* //* GENERATE CONTACTS BUTTON */}
           <button
             onClick={generateContacts}
-            className="p-2 text-white bg-[#146EB4] hover:text-[#146EB4] border-[#146EB4] rounded-sm duration-300 cursor-pointer border-2 hover:bg-white font-medium tracking-wide w-full"
+            className="p-2 text-white bg-[#146EB4] hover:text-[#146EB4] border-[#146EB4] rounded-md duration-300 cursor-pointer border-2 hover:bg-white font-medium tracking-wide w-full"
           >
             Generate Contacts
           </button>

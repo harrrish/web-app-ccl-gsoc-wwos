@@ -4,11 +4,11 @@ import { useLocation } from "react-router-dom";
 import ContactsFooter from "../Components/ContactsFooter";
 import { station } from "../data";
 
-export default function AMET() {
+export default function LATAM() {
   const { pathname } = useLocation();
   const region = pathname.split("/")[1];
 
-  const [country, setCountry] = useState("AE");
+  const [country, setCountry] = useState("MX");
   const [siteType, setSiteType] = useState("AMZL");
 
   const [severity, setSeverity] = useState("5");
@@ -17,7 +17,10 @@ export default function AMET() {
 
   const [cxImpact, setCxImpact] = useState("NO");
   const [hazardous, setHazardous] = useState("NO");
+  const [thermal, setThermal] = useState("NO");
+  const [dotRegulated, setDotRegulated] = useState("NO");
   const [discrimination, setDiscrimination] = useState("NO");
+  const [vehicleMalFunction, setVehicleMalFunction] = useState("NO");
 
   const [contacts, setContacts] = useState([]);
 
@@ -26,19 +29,13 @@ export default function AMET() {
     contacts.length = 0;
     const newCon = [];
 
-    //* EUROPE SITE-TYPE SEV#
-    newCon.push(`EUROPE ${siteType} SEV${severity === "5" ? "4" : severity}`);
-
     //* COUNTRY SITE-TYPE SEV#
     newCon.push(
       `${country} ${siteType} SEV${severity === "5" ? "4" : severity}`,
     );
 
-    //* PR TRANSPORTATION
-    newCon.push(`${country} PR TRANSPORTATION`);
-
-    //* MIDDLE EAST SEV#
-    newCon.push(`MIDDLE EAST SEV${severity === "5" ? "4" : severity}`);
+    //* NA SEV#
+    newCon.push(`LATAM SEV${severity}`);
 
     //* DRIVER INVOLVED
     newCon.push(
@@ -46,39 +43,26 @@ export default function AMET() {
     );
 
     //* REPORTED BY
-
-    if (
-      reportedBy === "CXCMKnownDA" ||
-      (reportedBy === "HubDA" && country === "AE")
-    )
-      newCon.push("sds-gsoc-driver-potentialharm@amazon.ae");
-    else if (
-      reportedBy === "CXCMKnownDA" ||
-      (reportedBy === "HubDA" && country === "SA")
-    )
-      newCon.push("sds-gsoc-driver-potentialharm@amazon.sa");
-    else if (
-      reportedBy === "CXCMKnownDA" ||
-      (reportedBy === "HubDA" && country === "EG")
-    )
-      newCon.push("sds-gsoc-driver-potentialharm@amazon.eg");
-    else if (
-      reportedBy === "CXCMKnownDA" ||
-      (reportedBy === "HubDA" && country === "TR")
-    )
-      newCon.push("sds-gsoc-driver-potentialharm@amazon.com.tr");
-    else if (reportedBy === "CXCM" && country === "AE")
-      newCon.push("sds-gsoc-cx-incident@amazon.ae");
-    else if (reportedBy === "CXCM" && country === "SA")
-      newCon.push("sds-gsoc-cx-incident@amazon.sa");
-    else if (reportedBy === "CXCM" && country === "EG")
-      newCon.push("sds-gsoc-cx-incident@amazon.eg");
-    else if (reportedBy === "CXCM" && country === "TR")
-      newCon.push("sds-gsoc-cx-incident@amazon.com.tr");
-
-    //* HAZARDOUS
-    if (hazardous === "YES") {
-      newCon.push(`EMEA HAZMAT SEV${severity === "5" ? "4" : severity}`);
+    if (country === "MX") {
+      if (reportedBy === "DP") {
+        newCon.push("sds-gsoc-flex-incident@amazon.com.mx");
+      } else if (reportedBy === "CXCMKnownDA") {
+        newCon.push("sds-gsoc-driver-potentialharm@amazon.com.mx");
+      } else if (reportedBy === "CXCM") {
+        newCon.push("sds-gsoc-cx-incident@amazon.com.mx");
+      } else if (reportedBy === "HubDA") {
+        newCon.push("mezjesus@amazon.com");
+        newCon.push("gerarre@amazon.com");
+        newCon.push("lissetb@amazon.com");
+      }
+    } else if (country === "BR") {
+      if (reportedBy === "DP") {
+        newCon.push("sds-gsoc-flex-incident@amazon.ca");
+      } else if (reportedBy === "CXCMKnownDA") {
+        newCon.push("sds-gsoc-driver-potentialharm@amazon.com.br");
+      } else if (reportedBy === "CXCM") {
+        newCon.push("sds-gsoc-cx-incident@amazon.com.br");
+      }
     }
 
     //* CX FACING IMPACT
@@ -87,58 +71,86 @@ export default function AMET() {
       newCon.push(`cs-gcc-all@amazon.com`);
     }
 
+    //* HAZARDOUS
+    if (hazardous === "YES") {
+      newCon.push("NA HAZMAT SUPPORT GROUP");
+      newCon.push("DANGEROUS GOODS SUPPORT GROUP");
+    }
+
+    //* THERMAL
+    if (thermal === "YES" && severity === "5")
+      newCon.push("LATAM LAST MILE VEHICLE THERMAL EVENT LOW SEVERITY");
+    else if (thermal === "YES") {
+      newCon.push("LATAM LAST MILE VEHICLE THERMAL EVENT");
+    }
+
+    //* DOT  REGULATED
+    if (dotRegulated === "YES") {
+      newCon.push("floftus@arcclaims.com");
+      newCon.push("ecarroll@arcclaims.com");
+    }
+
     //* DISCRIMINATION
     if (discrimination === "YES") newCon.push("DISCRIMINATION SUPPORT GROUP");
 
-    //* SEV1
-    if (severity === "1") newCon.push("EMEA SEV1");
+    //* VEHICLE MALFUNCTION
+    if (vehicleMalFunction === "YES" && severity === "5")
+      newCon.push("LATAM LAST MILE VEHICLE THERMAL EVENT LOW SEVERITY");
+    else if (vehicleMalFunction === "YES") {
+      newCon.push("LATAM LAST MILE VEHICLE THERMAL EVENT");
+    }
 
-    //* SEV2
-    if (severity === "2") newCon.push("EMEA SEV2");
+    if (severity === "1" || severity === "2") {
+      newCon.push("AMER LAST MILE RISK");
+      newCon.push(`AMER SEV${severity}`);
+      newCon.push("LATAM RESILIENCE");
+    }
 
     //* ===========================> SMILEY CONTACTS
-    newCon.push("GLOBAL OTR SAFETY SUPPORT GROUP");
-    newCon.push("EMEA ERC SUPPORT GROUP");
+    newCon.push("AMER INTERNAL COMMS SUPPORT GROUP");
+    newCon.push("LATAM ERC SUPPORT GROUP");
     newCon.push("NETWORK OPERATIONS CENTER SUPPORT GROUP");
     newCon.push("GSOC MGMT SUPPORT GROUP");
     newCon.push("RISK GLOBAL LAST MILE");
-    newCon.push("EUROPE ROC SUPPORT GROUP");
-    newCon.push("EMEA LAST MILE OPS DISRUPTION");
-    newCon.push("APAC AMET INTERNAL COMMS SUPPORT GROUP");
+    newCon.push("GLOBAL OTR SAFETY SUPPORT GROUP");
+    newCon.push("NORTH AMERICA ROC SUPPORT GROUP");
+    newCon.push("NORTH AMERICA OPS PR");
 
     setContacts([...newCon]);
   };
 
   return (
-    <div className="min-h-screen bg-black to-blue-200 flex font-f1 flex-col items-center gap-2 p-8">
+    <div className="min-h-screen bg-[#146EB4] to-blue-200 flex font-f1 flex-col items-center gap-2">
       {/* //* NAVBAR */}
-      <RegionNavs region={region} />
+      <nav className="bg-[#146EB4] w-full sm:w-[90%] rounded-md">
+        <RegionNavs region={region} />
+      </nav>
 
       {/* //* FORM */}
-      <div className="bg-white w-full mx-auto p-3 rounded-sm shadow-xl space-y-2">
+      <div className="bg-white w-full sm:w-[90%]  mx-auto p-3 rounded-md shadow-xl space-y-2">
         <h1 className="text-lg text-center font-extrabold text-gray-800 flex justify-between">
-          AMET <span className="text-lg font-bold">(AE / SA / EG / TR)</span>
+          LATAM <span className="text-lg font-bold">(MX / BR)</span>
         </h1>
 
         {/* //* SELECT COUNTRY */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
           <h1 className="text-lg font-medium w-1/4 text-center">Country:</h1>
           <div className="w-1/4 flex justify-center gap-8">
             <div className="flex gap-1 items-center">
               <input
                 type="radio"
                 name="country"
-                value="AE"
-                id="AE"
-                checked={country === "AE"}
+                value="MX"
+                id="MX"
+                checked={country === "MX"}
                 onChange={(e) => setCountry(e.target.value)}
                 className="cursor-pointer"
               />
               <label
-                htmlFor="AE"
+                htmlFor="MX"
                 className="uppercase font-bold tracking-wider cursor-pointer"
               >
-                AE
+                MX
               </label>
             </div>
 
@@ -146,65 +158,28 @@ export default function AMET() {
               <input
                 type="radio"
                 name="country"
-                value="SA"
-                id="SA"
-                checked={country === "SA"}
+                value="BR"
+                id="BR"
+                checked={country === "BR"}
                 onChange={(e) => setCountry(e.target.value)}
                 className="cursor-pointer"
               />
               <label
-                htmlFor="SA"
+                htmlFor="BR"
                 className="uppercase font-bold tracking-wider cursor-pointer"
               >
-                SA
-              </label>
-            </div>
-
-            <div className="flex gap-1 items-center">
-              <input
-                type="radio"
-                name="country"
-                value="EG"
-                id="EG"
-                checked={country === "EG"}
-                onChange={(e) => setCountry(e.target.value)}
-                className="cursor-pointer"
-              />
-              <label
-                htmlFor="EG"
-                className="uppercase font-bold tracking-wider cursor-pointer"
-              >
-                EG
-              </label>
-            </div>
-
-            <div className="flex gap-1 items-center">
-              <input
-                type="radio"
-                name="country"
-                value="TR"
-                id="TR"
-                checked={country === "TR"}
-                onChange={(e) => setCountry(e.target.value)}
-                className="cursor-pointer"
-              />
-              <label
-                htmlFor="TR"
-                className="uppercase font-bold tracking-wider cursor-pointer"
-              >
-                TR
+                BR
               </label>
             </div>
           </div>
         </div>
 
-        {/* //* SELECT SITE TYPE */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
           <h2 className="text-lg font-medium w-1/4 text-center">Site type:</h2>
           <select
             value={siteType}
             onChange={(event) => setSiteType(event.target.value)}
-            className="border p-2 rounded-sm font-medium w-1/4 text-center"
+            className="border p-2 rounded-md font-medium w-1/4 text-center"
           >
             {station.map((s) => (
               <option
@@ -219,7 +194,7 @@ export default function AMET() {
         </div>
 
         {/* //* SELECT SEV */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
           <h1 className="text-lg font-medium w-1/4 text-center">Severity:</h1>
           <div className="w-1/4 flex justify-between gap-8">
             <div className="flex gap-1 items-center">
@@ -315,7 +290,7 @@ export default function AMET() {
         </div>
 
         {/* //* DRIVER INVOLVED */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-center">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-center">
           <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/2 text-center">
             Driver involved:
           </h2>
@@ -337,6 +312,7 @@ export default function AMET() {
                 DSP
               </label>
             </div>
+
             <div className="flex gap-1 items-center">
               <input
                 type="radio"
@@ -359,46 +335,74 @@ export default function AMET() {
               <input
                 type="radio"
                 name="driverInvolved"
-                value="HUB DA"
-                id="HUB DA"
-                checked={driverInvolved === "HUB DA"}
+                value="BICYCLE DSP"
+                id="BICYCLE DSP"
+                checked={driverInvolved === "BICYCLE DSP"}
                 onChange={(e) => setDriverInvolved(e.target.value)}
                 className="cursor-pointer"
               />
               <label
-                htmlFor="HUB DA"
+                htmlFor="BICYCLE DSP"
                 className="uppercase font-bold tracking-wider cursor-pointer"
               >
-                HUB DA
+                BICYCLE DSP
               </label>
             </div>
+
+            {country === "MX" && (
+              <div className="flex gap-1 items-center">
+                <input
+                  type="radio"
+                  name="driverInvolved"
+                  value="HUB"
+                  id="HUB"
+                  checked={driverInvolved === "HUB"}
+                  onChange={(e) => setDriverInvolved(e.target.value)}
+                  className="cursor-pointer"
+                />
+                <label
+                  htmlFor="HUB"
+                  className="uppercase font-bold tracking-wider cursor-pointer"
+                >
+                  HUB
+                </label>
+              </div>
+            )}
           </div>
         </div>
 
         {/* //* REPORTED BY */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
           <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/4 text-center">
-            Reported by:
+            Reported By:
           </h2>
           <select
             value={reportedBy}
             onChange={(event) => setReportedBy(event.target.value)}
-            className="border p-2 rounded-sm font-medium w-1/4 text-center"
+            className="border p-2 rounded-md font-medium w-1/4 text-center"
           >
             <option className="font-medium" value="DA">
-              DSP DA / HUB DA (CX/CM is Unknown)
+              DA (CX/CM is Unknown)
+            </option>
+            <option className="font-medium" value="DP">
+              Flex DP
             </option>
             <option className="font-medium" value="CXCMKnownDA">
-              DSP DA / HUB DA (CX/CM is Known)
+              DA (CX/CM is Known)
             </option>
             <option className="font-medium" value="CXCM">
               CX/CM
             </option>
+            {country === "US" && (
+              <option className="font-medium" value="HubDA">
+                Hub DA
+              </option>
+            )}
           </select>
         </div>
 
         {/* //* CX FACING IMPACT */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
           <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/4 text-center">
             Customer Facing Impact:
           </h2>
@@ -442,7 +446,7 @@ export default function AMET() {
         </div>
 
         {/* //* Hazardous Material */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
           <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/4 text-center">
             Hazardous Material:
           </h2>
@@ -485,8 +489,96 @@ export default function AMET() {
           </div>
         </div>
 
+        {/* //* Delivery Van Vehicle Thermal Event  */}
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
+          <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/4 text-center">
+            Vehicle Thermal Event :
+          </h2>
+          <div className="w-1/4 flex justify-center gap-8">
+            <div className="flex gap-1 items-center">
+              <input
+                type="radio"
+                name="thermal"
+                value="YES"
+                id="YES_thermal"
+                checked={thermal === "YES"}
+                onChange={(e) => setThermal(e.target.value)}
+                className="cursor-pointer"
+              />
+              <label
+                htmlFor="YES_thermal"
+                className="uppercase font-bold tracking-wider cursor-pointer"
+              >
+                Yes
+              </label>
+            </div>
+
+            <div className="flex gap-1 items-center">
+              <input
+                type="radio"
+                name="thermal"
+                value="NO"
+                id="NO_thermal"
+                checked={thermal === "NO"}
+                onChange={(e) => setThermal(e.target.value)}
+                className="cursor-pointer"
+              />
+              <label
+                htmlFor="NO_thermal"
+                className="uppercase font-bold tracking-wider cursor-pointer"
+              >
+                No
+              </label>
+            </div>
+          </div>
+        </div>
+
+        {/* //* DOT REGULATED VEHICLE */}
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
+          <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/4 text-center">
+            DOT Regulated Vehicle:
+          </h2>
+          <div className="w-1/4 flex justify-center gap-8">
+            <div className="flex gap-1 items-center">
+              <input
+                type="radio"
+                name="dotRegulated"
+                value="YES"
+                id="YES_dotRegulated"
+                checked={dotRegulated === "YES"}
+                onChange={(e) => setDotRegulated(e.target.value)}
+                className="cursor-pointer"
+              />
+              <label
+                htmlFor="YES_dotRegulated"
+                className="uppercase font-bold tracking-wider cursor-pointer"
+              >
+                Yes
+              </label>
+            </div>
+
+            <div className="flex gap-1 items-center">
+              <input
+                type="radio"
+                name="dotRegulated"
+                value="NO"
+                id="NO_dotRegulated"
+                checked={dotRegulated === "NO"}
+                onChange={(e) => setDotRegulated(e.target.value)}
+                className="cursor-pointer"
+              />
+              <label
+                htmlFor="NO_dotRegulated"
+                className="uppercase font-bold tracking-wider cursor-pointer"
+              >
+                No
+              </label>
+            </div>
+          </div>
+        </div>
+
         {/* //* DISCRIMINATION */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
           <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/4 text-center">
             Discrimination (hate-bias):
           </h2>
@@ -529,11 +621,55 @@ export default function AMET() {
           </div>
         </div>
 
+        {/* //* VEHICLE MALFUNCTION */}
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
+          <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/2 text-center">
+            Vehicle Malfunction (Amazon-branded):
+          </h2>
+          <div className="w-1/2 flex justify-center gap-8">
+            <div className="flex gap-1 items-center">
+              <input
+                type="radio"
+                name="vehicleMalFunction"
+                value="YES"
+                id="YES_vehicleMalfunction"
+                checked={vehicleMalFunction === "YES"}
+                onChange={(e) => setVehicleMalFunction(e.target.value)}
+                className="cursor-pointer"
+              />
+              <label
+                htmlFor="YES_vehicleMalfunction"
+                className="uppercase font-bold tracking-wider cursor-pointer"
+              >
+                Yes
+              </label>
+            </div>
+
+            <div className="flex gap-1 items-center">
+              <input
+                type="radio"
+                name="vehicleMalFunction"
+                value="NO"
+                id="NO_vehicleMalfunction"
+                checked={vehicleMalFunction === "NO"}
+                onChange={(e) => setVehicleMalFunction(e.target.value)}
+                className="cursor-pointer"
+              />
+              <label
+                htmlFor="NO_vehicleMalfunction"
+                className="uppercase font-bold tracking-wider cursor-pointer"
+              >
+                No
+              </label>
+            </div>
+          </div>
+        </div>
+
         <div className="flex gap-2">
           {/* //* GENERATE CONTACTS BUTTON */}
           <button
             onClick={generateContacts}
-            className="p-2 text-white bg-[#146EB4] hover:text-[#146EB4] border-[#146EB4] rounded-sm duration-300 cursor-pointer border-2 hover:bg-white font-medium tracking-wide w-full"
+            className="p-2 text-white bg-[#146EB4] hover:text-[#146EB4] border-[#146EB4] rounded-md duration-300 cursor-pointer border-2 hover:bg-white font-medium tracking-wide w-full"
           >
             Generate Contacts
           </button>

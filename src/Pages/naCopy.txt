@@ -146,18 +146,19 @@ export default function NA() {
   };
 
   return (
-    <div className="min-h-screen bg-black to-blue-200 flex font-f1 flex-col items-center gap-2 p-8">
+    <div className="min-h-screen bg-[#146EB4] to-blue-200 flex font-f1 flex-col items-center gap-2">
       {/* //* NAVBAR */}
-      <RegionNavs region={region} />
-
+      <nav className="bg-[#146EB4] w-full sm:w-[90%] rounded-md">
+        <RegionNavs region={region} />
+      </nav>
       {/* //* FORM */}
-      <div className="bg-white w-full  p-3 rounded-sm flex flex-col gap-1">
+      <div className="bg-white w-full sm:w-[90%] p-3 rounded-md flex flex-col gap-1">
         <h1 className="text-lg text-center font-extrabold text-gray-800 flex justify-between">
           NA <span className="text-lg font-bold">(US / CA)</span>
         </h1>
 
         {/* //* SELECT LANGUAGE */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
           <h1 className="text-lg font-medium w-1/4 text-center">Language:</h1>
           <div className="w-1/4 flex justify-center gap-8">
             <div className="flex gap-1 items-center">
@@ -199,7 +200,7 @@ export default function NA() {
         </div>
 
         {/* //* SELECT COUNTRY */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
           <h1 className="text-lg font-medium w-1/4 text-center">Country:</h1>
           <div className="w-1/4 flex justify-center gap-8">
             <div className="flex gap-1 items-center">
@@ -241,12 +242,12 @@ export default function NA() {
         </div>
 
         {/* //* SELECT SITE TYPE */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
           <h2 className="text-lg font-medium w-1/4 text-center">Site type:</h2>
           <select
             value={siteType}
             onChange={(event) => setSiteType(event.target.value)}
-            className="border p-2 rounded-sm font-medium w-1/4 text-center"
+            className="border p-2 rounded-md font-medium w-1/4 text-center"
           >
             {station.map((s) => (
               <option
@@ -261,7 +262,7 @@ export default function NA() {
         </div>
 
         {/* //* SELECT SEV */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
           <h1 className="text-lg font-medium w-1/4 text-center">Severity:</h1>
           <div className="w-1/4 flex justify-between gap-8">
             <div className="flex gap-1 items-center">
@@ -357,7 +358,7 @@ export default function NA() {
         </div>
 
         {/* //* DRIVER INVOLVED */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-center">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-center">
           <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/2 text-center">
             Driver involved:
           </h2>
@@ -441,14 +442,14 @@ export default function NA() {
         </div>
 
         {/* //* REPORTED BY */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
           <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/4 text-center">
             Reported By:
           </h2>
           <select
             value={reportedBy}
             onChange={(event) => setReportedBy(event.target.value)}
-            className="border p-2 rounded-sm font-medium w-1/4 text-center"
+            className="border p-2 rounded-md font-medium w-1/4 text-center"
           >
             <option className="font-medium" value="DA">
               DA (CX/CM is Unknown)
@@ -471,7 +472,7 @@ export default function NA() {
         </div>
 
         {/* //* CX FACING IMPACT */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
           <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/4 text-center">
             Customer Facing Impact:
           </h2>
@@ -515,7 +516,7 @@ export default function NA() {
         </div>
 
         {/* //* HAZARDOUS MATERIAL */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
           <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/4 text-center">
             Hazardous Material:
           </h2>
@@ -559,7 +560,7 @@ export default function NA() {
         </div>
 
         {/* //* DETRIMENTAL BEHAVIOR */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
           <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/4 text-center">
             Detrimental Behavior:
           </h2>
@@ -603,7 +604,7 @@ export default function NA() {
         </div>
 
         {/* //* DELIVERY VEHICLE VAN THERMAL EVENT */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
           <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/4 text-center">
             Vehicle Thermal Event :
           </h2>
@@ -648,7 +649,7 @@ export default function NA() {
 
         {/* //* DOT REGULATED VEHICLE */}
         {driverInvolved === "DSP" && (
-          <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+          <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
             <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/4 text-center">
               DOT Regulated Vehicle:
             </h2>
@@ -693,7 +694,7 @@ export default function NA() {
         )}
 
         {/* //* DISCRIMINATION */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
           <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/4 text-center">
             Discrimination (hate-bias):
           </h2>
@@ -738,7 +739,7 @@ export default function NA() {
 
         {/* //* VEHICLE MALFUNCTION */}
         {driverInvolved === "DSP" && (
-          <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+          <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
             <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/2 text-center">
               Vehicle Malfunction (Amazon-branded):
             </h2>
@@ -786,7 +787,7 @@ export default function NA() {
         <div className="flex gap-2">
           <button
             onClick={generateContacts}
-            className="p-2 text-white bg-[#146EB4] hover:text-[#146EB4] border-[#146EB4] rounded-sm duration-300 cursor-pointer border-2 hover:bg-white font-medium tracking-wide w-full"
+            className="p-2 text-white bg-[#146EB4] hover:text-[#146EB4] border-[#146EB4] rounded-md duration-300 cursor-pointer border-2 hover:bg-white font-medium tracking-wide w-full"
           >
             Generate Contacts
           </button>

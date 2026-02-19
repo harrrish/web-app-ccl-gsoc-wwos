@@ -6,6 +6,7 @@ import EUROPE from "./Pages/Europe";
 import AMET from "./Pages/AMET";
 import APAC from "./Pages/APAC";
 import Error from "./Pages/Error";
+import ESTools from "./Pages/ESTools";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
   {
     path: "/APAC",
     element: <APAC />,
+  },
+  {
+    path: "/tools",
+    element: <ESTools />,
   },
   {
     path: "/*",

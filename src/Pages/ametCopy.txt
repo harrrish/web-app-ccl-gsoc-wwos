@@ -110,18 +110,20 @@ export default function AMET() {
   };
 
   return (
-    <div className="min-h-screen bg-black to-blue-200 flex font-f1 flex-col items-center gap-2 p-8">
+    <div className="min-h-screen bg-[#146EB4] to-blue-200 flex font-f1 flex-col items-center gap-2">
       {/* //* NAVBAR */}
-      <RegionNavs region={region} />
+      <nav className="bg-[#146EB4] w-full sm:w-[90%] rounded-md">
+        <RegionNavs region={region} />
+      </nav>
 
       {/* //* FORM */}
-      <div className="bg-white w-full mx-auto p-3 rounded-sm shadow-xl space-y-2">
+      <div className="bg-white w-full sm:w-[90%]  mx-auto p-3 rounded-md shadow-xl space-y-2">
         <h1 className="text-lg text-center font-extrabold text-gray-800 flex justify-between">
           AMET <span className="text-lg font-bold">(AE / SA / EG / TR)</span>
         </h1>
 
         {/* //* SELECT COUNTRY */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
           <h1 className="text-lg font-medium w-1/4 text-center">Country:</h1>
           <div className="w-1/4 flex justify-center gap-8">
             <div className="flex gap-1 items-center">
@@ -199,12 +201,12 @@ export default function AMET() {
         </div>
 
         {/* //* SELECT SITE TYPE */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
           <h2 className="text-lg font-medium w-1/4 text-center">Site type:</h2>
           <select
             value={siteType}
             onChange={(event) => setSiteType(event.target.value)}
-            className="border p-2 rounded-sm font-medium w-1/4 text-center"
+            className="border p-2 rounded-md font-medium w-1/4 text-center"
           >
             {station.map((s) => (
               <option
@@ -219,7 +221,7 @@ export default function AMET() {
         </div>
 
         {/* //* SELECT SEV */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
           <h1 className="text-lg font-medium w-1/4 text-center">Severity:</h1>
           <div className="w-1/4 flex justify-between gap-8">
             <div className="flex gap-1 items-center">
@@ -315,7 +317,7 @@ export default function AMET() {
         </div>
 
         {/* //* DRIVER INVOLVED */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-center">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-center">
           <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/2 text-center">
             Driver involved:
           </h2>
@@ -376,14 +378,14 @@ export default function AMET() {
         </div>
 
         {/* //* REPORTED BY */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
           <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/4 text-center">
             Reported by:
           </h2>
           <select
             value={reportedBy}
             onChange={(event) => setReportedBy(event.target.value)}
-            className="border p-2 rounded-sm font-medium w-1/4 text-center"
+            className="border p-2 rounded-md font-medium w-1/4 text-center"
           >
             <option className="font-medium" value="DA">
               DSP DA / HUB DA (CX/CM is Unknown)
@@ -398,7 +400,7 @@ export default function AMET() {
         </div>
 
         {/* //* CX FACING IMPACT */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
           <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/4 text-center">
             Customer Facing Impact:
           </h2>
@@ -442,7 +444,7 @@ export default function AMET() {
         </div>
 
         {/* //* Hazardous Material */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
           <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/4 text-center">
             Hazardous Material:
           </h2>
@@ -486,7 +488,7 @@ export default function AMET() {
         </div>
 
         {/* //* DISCRIMINATION */}
-        <div className="bg-gray-50 px-4 py-1 rounded-sm shadow-sm border border-gray-200 flex items-center justify-around">
+        <div className="bg-gray-50 px-4 py-1 rounded-md shadow-sm border border-gray-200 flex items-center justify-around">
           <h2 className="text-lg font-medium text-gray-800 mb-1 w-1/4 text-center">
             Discrimination (hate-bias):
           </h2>
@@ -533,7 +535,7 @@ export default function AMET() {
           {/* //* GENERATE CONTACTS BUTTON */}
           <button
             onClick={generateContacts}
-            className="p-2 text-white bg-[#146EB4] hover:text-[#146EB4] border-[#146EB4] rounded-sm duration-300 cursor-pointer border-2 hover:bg-white font-medium tracking-wide w-full"
+            className="p-2 text-white bg-[#146EB4] hover:text-[#146EB4] border-[#146EB4] rounded-md duration-300 cursor-pointer border-2 hover:bg-white font-medium tracking-wide w-full"
           >
             Generate Contacts
           </button>

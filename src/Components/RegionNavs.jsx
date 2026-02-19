@@ -1,94 +1,126 @@
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
-import ActionItem from "../Pages/ActionItem.jsx";
-import ClosingStatement from "../Pages/ClosingStatement.jsx";
+import { FaGlobeAmericas, FaChevronRight } from "react-icons/fa";
+import { MdUpdate, MdChecklist, MdFactCheck } from "react-icons/md";
+import { HiOutlineStatusOnline } from "react-icons/hi";
+import { CCLVersion } from "../data.js";
 
 export default function RegionNavs({ region }) {
-  const [showAction, setShowAction] = useState(false);
-  const [showClosing, setShowClosing] = useState(false);
-
   return (
-    <div className="flex flex-col items-center gap-2 py-2 w-full">
-      {showAction && <ActionItem setShowAction={setShowAction} />}
-      {showClosing && <ClosingStatement setShowClosing={setShowClosing} />}
+    <div className="flex flex-col items-center w-full font-f1 gap-3">
+      {/* VERSION BANNER */}
+      <div className="w-full bg-[var(--color-bg2)] border border-[var(--color-border)] text-[var(--color-f1)] flex items-center justify-center gap-3 px-4 py-3 rounded-lg tracking-wide shadow-lg shadow-black/40">
+        <MdUpdate
+          className="text-[var(--color-blue-glow)] animate-pulse"
+          size={20}
+        />
+        <span className="font-f3 text-center text-sm sm:text-base">
+          Consolidated Contacts List Version: "
+          <span className="text-[var(--color-orange-glow)] font-f4">
+            {CCLVersion}
+          </span>
+          "
+        </span>
+        <HiOutlineStatusOnline
+          className="text-[var(--color-success)] ml-1"
+          size={18}
+        />
+      </div>
 
-      <h1 className="text-lg w-full rounded-sm bg-green-600 text-white text-center font-bold flex justify-center gap-2 p-2 tracking-wider">
-        Consolidated Contacts List Version: 11.26.2025
-      </h1>
-
-      <div className="flex justify-between gap-2 items-center w-full">
+      {/* REGION GRID */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 w-full">
         <NavLink
           to={"/NA"}
           title="United States | Canada"
-          className={`shadow-2xl ${
-            region === "NA" ? "bg-[#146EB4] text-white" : "bg-white shadow-2xl"
-          } hover:bg-sky-400 hover:text-black font-bold p-1 px-4 rounded-sm w-full text-center border-2 border-white tracking-widest`}
+          className={`group flex items-center justify-center gap-2 px-4 py-3 rounded-lg border font-f3 tracking-wide transition-all duration-300 shadow-md active:scale-[0.98] ${
+            region === "NA"
+              ? "bg-[var(--color-primary)] text-white border-[var(--color-primary)] shadow-[var(--color-primary)]/40"
+              : "bg-[var(--color-bg3)] text-[var(--color-f2)] border-[var(--color-border)] hover:bg-[var(--color-hover)] hover:text-[var(--color-f1)] hover:border-[var(--color-blue-glow)] hover:shadow-[var(--color-blue-glow)]/20"
+          }`}
         >
-          NA
+          <FaGlobeAmericas size={16} />
+          <span>NA</span>
+          {region === "NA" && (
+            <FaChevronRight className="text-white" size={12} />
+          )}
         </NavLink>
+
         <NavLink
           to={"/LATAM"}
           title="Mexico | Brazil"
-          className={`shadow-2xl ${
+          className={`group flex items-center justify-center gap-2 px-4 py-3 rounded-lg border font-f3 tracking-wide transition-all duration-300 shadow-md active:scale-[0.98] ${
             region === "LATAM"
-              ? "bg-[#146EB4] text-white"
-              : "bg-white shadow-2xl"
-          } hover:bg-sky-400 hover:text-black font-bold p-1 px-4 rounded-sm w-full text-center border-2 border-white tracking-widest`}
+              ? "bg-[var(--color-primary)] text-white border-[var(--color-primary)] shadow-[var(--color-primary)]/40"
+              : "bg-[var(--color-bg3)] text-[var(--color-f2)] border-[var(--color-border)] hover:bg-[var(--color-hover)] hover:text-[var(--color-f1)] hover:border-[var(--color-blue-glow)] hover:shadow-[var(--color-blue-glow)]/20"
+          }`}
         >
-          LATAM
+          <FaGlobeAmericas size={16} />
+          <span>LATAM</span>
+          {region === "LATAM" && (
+            <FaChevronRight className="text-white" size={12} />
+          )}
         </NavLink>
+
         <NavLink
           to={"/EUROPE"}
-          title="UK | Ireland | Germany | Austria | Luxembourg | Spain |
-            France | Belgium | Italy"
-          className={`shadow-2xl ${
+          title="UK | Ireland | Germany | Austria | Luxembourg | Spain | France | Belgium | Italy"
+          className={`group flex items-center justify-center gap-2 px-4 py-3 rounded-lg border font-f3 tracking-wide transition-all duration-300 shadow-md active:scale-[0.98] ${
             region === "EUROPE"
-              ? "bg-[#146EB4] text-white"
-              : "bg-white shadow-2xl"
-          } hover:bg-sky-400 hover:text-black font-bold p-1 px-4 rounded-sm w-full text-center border-2 border-white tracking-widest`}
+              ? "bg-[var(--color-primary)] text-white border-[var(--color-primary)] shadow-[var(--color-primary)]/40"
+              : "bg-[var(--color-bg3)] text-[var(--color-f2)] border-[var(--color-border)] hover:bg-[var(--color-hover)] hover:text-[var(--color-f1)] hover:border-[var(--color-blue-glow)] hover:shadow-[var(--color-blue-glow)]/20"
+          }`}
         >
-          EUROPE
+          <FaGlobeAmericas size={16} />
+          <span>EUROPE</span>
+          {region === "EUROPE" && (
+            <FaChevronRight className="text-white" size={12} />
+          )}
         </NavLink>
+
         <NavLink
           to={"/AMET"}
           title="UAE | SAUDI | EGYPT | TURKEY"
-          className={`shadow-2xl ${
+          className={`group flex items-center justify-center gap-2 px-4 py-3 rounded-lg border font-f3 tracking-wide transition-all duration-300 shadow-md active:scale-[0.98] ${
             region === "AMET"
-              ? "bg-[#146EB4] text-white"
-              : "bg-white shadow-2xl"
-          } hover:bg-sky-400 hover:text-black font-bold p-1 px-4 rounded-sm w-full text-center border-2 border-white tracking-widest`}
+              ? "bg-[var(--color-primary)] text-white border-[var(--color-primary)] shadow-[var(--color-primary)]/40"
+              : "bg-[var(--color-bg3)] text-[var(--color-f2)] border-[var(--color-border)] hover:bg-[var(--color-hover)] hover:text-[var(--color-f1)] hover:border-[var(--color-blue-glow)] hover:shadow-[var(--color-blue-glow)]/20"
+          }`}
         >
-          AMET
+          <FaGlobeAmericas size={16} />
+          <span>AMET</span>
+          {region === "AMET" && (
+            <FaChevronRight className="text-white" size={12} />
+          )}
         </NavLink>
+
         <NavLink
           to={"/APAC"}
           title="AUSTRALIA | JAPAN | SINGAPORE | INDIA"
-          className={`shadow-2xl ${
+          className={`group flex items-center justify-center gap-2 px-4 py-3 rounded-lg border font-f3 tracking-wide transition-all duration-300 shadow-md active:scale-[0.98] ${
             region === "APAC"
-              ? "bg-[#146EB4] text-white"
-              : "bg-white shadow-2xl"
-          } hover:bg-sky-400 hover:text-black font-bold p-1 px-4 rounded-sm w-full text-center border-2 border-white tracking-widest`}
+              ? "bg-[var(--color-primary)] text-white border-[var(--color-primary)] shadow-[var(--color-primary)]/40"
+              : "bg-[var(--color-bg3)] text-[var(--color-f2)] border-[var(--color-border)] hover:bg-[var(--color-hover)] hover:text-[var(--color-f1)] hover:border-[var(--color-blue-glow)] hover:shadow-[var(--color-blue-glow)]/20"
+          }`}
         >
-          APAC
+          <FaGlobeAmericas size={16} />
+          <span>APAC</span>
+          {region === "APAC" && (
+            <FaChevronRight className="text-white" size={12} />
+          )}
+        </NavLink>
+
+        <NavLink
+          to={"/tools"}
+          title="ES Tools"
+          className={`group flex items-center justify-center gap-2 px-4 py-3 rounded-lg border font-f3 tracking-wide transition-all duration-300 shadow-md active:scale-[0.98] ${
+            region === "tools"
+              ? "bg-[var(--color-primary)] text-white border-[var(--color-primary)] shadow-[var(--color-primary)]/40"
+              : "bg-[var(--color-bg3)] text-[var(--color-f2)] border-[var(--color-border)] hover:bg-[var(--color-hover)] hover:text-[var(--color-f1)] hover:border-[var(--color-blue-glow)] hover:shadow-[var(--color-blue-glow)]/20"
+          }`}
+        >
+          <MdChecklist size={16} />
+          <span>ES Tools</span>
         </NavLink>
       </div>
-      {region && (
-        <div className="flex gap-1 w-full">
-          <button
-            onClick={() => setShowAction(true)}
-            className="w-1/2 bg-black p-2 rounded-sm font-medium hover:bg-sky-400 hover:text-white text-white tracking-wide cursor-pointer hover:underline"
-          >
-            View <span className="uppercase font-extrabold">Action Item</span>
-          </button>
-          <button
-            onClick={() => setShowClosing(true)}
-            className="w-1/2 bg-black p-2 rounded-sm font-medium hover:bg-sky-400 hover:text-white text-white tracking-wide cursor-pointer hover:underline"
-          >
-            View
-            <span className="uppercase font-extrabold"> Closing Statement</span>
-          </button>
-        </div>
-      )}
     </div>
   );
 }

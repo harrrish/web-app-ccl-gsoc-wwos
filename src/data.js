@@ -26,3 +26,5 @@ export async function handleCopyArchive() {
   await navigator.clipboard.writeText("wwos-gsoc-archive@amazon.com");
   alert(`Copied "wwos-gsoc-archive@amazon.com" to clipboard`);
 }
+
+export const CCLVersion = "02.11.2026";
