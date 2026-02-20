@@ -6,13 +6,9 @@ import { CCLVersion } from "../data.js";
 
 export default function RegionNavs({ region }) {
   return (
-    <div className="flex flex-col items-center w-full font-f1 gap-3">
+    <div className="flex flex-col items-center w-full font-f1 gap-2">
       {/* VERSION BANNER */}
-      <div className="w-full bg-[var(--color-bg2)] border border-[var(--color-border)] text-[var(--color-f1)] flex items-center justify-center gap-3 px-4 py-3 rounded-lg tracking-wide shadow-lg shadow-black/40">
-        <MdUpdate
-          className="text-[var(--color-blue-glow)] animate-pulse"
-          size={20}
-        />
+      <div className="w-full bg-[var(--color-bg2)] border border-[var(--color-border)] text-[var(--color-f1)] flex items-center justify-center gap-3 p-2 rounded-lg tracking-wide shadow-lg shadow-black/40">
         <span className="font-f3 text-center text-sm sm:text-base">
           Consolidated Contacts List Version: "
           <span className="text-[var(--color-orange-glow)] font-f4">
@@ -20,10 +16,6 @@ export default function RegionNavs({ region }) {
           </span>
           "
         </span>
-        <HiOutlineStatusOnline
-          className="text-[var(--color-success)] ml-1"
-          size={18}
-        />
       </div>
 
       {/* REGION GRID */}
