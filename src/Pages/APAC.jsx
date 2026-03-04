@@ -124,8 +124,15 @@ export default function APAC() {
     newCon.push("NETWORK OPERATIONS CENTER SUPPORT GROUP");
     newCon.push("GSOC MGMT SUPPORT GROUP");
     newCon.push("RISK GLOBAL LAST MILE");
-    newCon.push("APAC AMET INTERNAL COMMS SUPPORT GROUP");
     newCon.push("APAC MEATR Internal Comms Support Group");
+
+    /* 
+    APAC ERC SUPPORT GROUP,
+    NETWORK OPERATIONS CENTER SUPPORT GROUP,
+    GSOC MGMT SUPPORT GROUP,
+    RISK GLOBAL LAST MILE, 
+    APAC MEATR Internal Comms Support Group
+    */
 
     setContacts([...newCon]);
   };
