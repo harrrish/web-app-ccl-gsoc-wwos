@@ -1,7 +1,8 @@
-import { handleCopyArchive, ownerID } from "../data";
+import { handleCopyArchive } from "../data";
 import { MdContentCopy, MdEmail, MdContacts, MdWarning } from "react-icons/md";
 import { FaExclamationTriangle, FaCheckCircle } from "react-icons/fa";
 import { HiShieldCheck } from "react-icons/hi";
+import Owner from "./Owner";
 
 export default function ContactsFooter({ contacts, sev }) {
   const sevBg =
@@ -66,7 +67,6 @@ export default function ContactsFooter({ contacts, sev }) {
               Copy
             </button>
           </div>
-
           <div className="flex flex-col sm:flex-row gap-3 w-full">
             <div className="flex flex-wrap gap-2 w-full sm:w-[80%]">
               {contacts.map((c, i) => (
@@ -88,13 +88,7 @@ export default function ContactsFooter({ contacts, sev }) {
               Copy Contacts
             </button>
           </div>
-
-          <div className="text-center text-sm font-f2 text-[var(--color-f2)] border-t border-[var(--color-border-soft)] pt-3 w-full">
-            For feedback or suggestions contact
-            <span className="font-f3 text-[var(--color-primary)] ml-1 hover:text-[var(--color-blue-glow)] transition-colors duration-300 cursor-pointer">
-              {ownerID}
-            </span>
-          </div>
+          <Owner />
         </div>
       )}
     </footer>

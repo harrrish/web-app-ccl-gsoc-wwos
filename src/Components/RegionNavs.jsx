@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { FaGlobeAmericas, FaChevronRight } from "react-icons/fa";
-import { MdUpdate, MdChecklist, MdFactCheck } from "react-icons/md";
-import { HiOutlineStatusOnline } from "react-icons/hi";
+import { MdChecklist } from "react-icons/md";
 import { CCLVersion } from "../data.js";
 
 export default function RegionNavs({ region }) {

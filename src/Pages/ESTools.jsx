@@ -1,20 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ActionItem from "../Pages/ActionItem.jsx";
 import ClosingStatement from "../Pages/ClosingStatement.jsx";
-import {
-  FaGlobeAmericas,
-  FaChevronRight,
-  FaPhone,
-  FaUser,
-  FaFlag,
-  FaChevronDown,
-} from "react-icons/fa";
-import {
-  MdChecklist,
-  MdFactCheck,
-  MdLanguage,
-  MdDialpad,
-} from "react-icons/md";
+import { FaChevronRight, FaPhone } from "react-icons/fa";
+import { MdChecklist, MdFactCheck } from "react-icons/md";
 import { useLocation } from "react-router-dom";
 import RegionNavs from "../Components/RegionNavs.jsx";
 import OneDial from "../Components/OneDial.jsx";

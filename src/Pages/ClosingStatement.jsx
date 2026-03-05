@@ -1,4 +1,3 @@
-import React from "react";
 import { MdFactCheck, MdClose, MdSupportAgent } from "react-icons/md";
 import { FaUserShield } from "react-icons/fa";
 

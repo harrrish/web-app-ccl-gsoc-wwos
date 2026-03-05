@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { FaPhone, FaUser, FaTimes, FaFlag, FaArrowLeft } from "react-icons/fa";
+import { useState } from "react";
+import { FaPhone, FaUser, FaTimes, FaArrowLeft } from "react-icons/fa";
 import { MdLanguage } from "react-icons/md";
 
 export default function OneDial({ setShowOneDial }) {

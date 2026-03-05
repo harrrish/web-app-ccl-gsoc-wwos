@@ -1,9 +1,7 @@
-import { FaHome, FaGlobeAmericas } from "react-icons/fa";
-import { MdContacts, MdFeedback, MdSecurity } from "react-icons/md";
-import { HiOutlineStatusOnline } from "react-icons/hi";
+import { MdContacts } from "react-icons/md";
 import RegionNavs from "../Components/RegionNavs";
 import wwosLogo from "../images/wwos-gsoc.png";
-import { ownerID } from "../data";
+import Owner from "../Components/Owner";
 
 export default function Home() {
   return (
@@ -38,17 +36,7 @@ export default function Home() {
 
         <RegionNavs />
 
-        <div className="flex items-center justify-center gap-3 text-[var(--color-f2)] font-f2 text-lg font-semibold border-t border-[var(--color-border-soft)] pt-6">
-          <MdFeedback className="text-[var(--color-green-glow)]" size={20} />
-          For feedback or suggestions contact
-          <span className="text-[var(--color-primary)] font-f3 ml-1 hover:text-[var(--color-blue-glow)] transition-colors duration-300 cursor-pointer">
-<<<<<<< HEAD
-            {ownerID}
-=======
-            harisss@amazon.com !bhastrip@amazon.com
->>>>>>> 5cb0098fd9bfbb50ac4339f6a8899a9aca69b07a
-          </span>
-        </div>
+        <Owner />
       </div>
     </div>
   );

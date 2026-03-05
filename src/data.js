@@ -30,4 +30,5 @@ export async function handleCopyArchive() {
 
 export const CCLVersion = "03.3.26";
 
-export const ownerID = "@harisss | !@bhastrip";
+export const ownerHarish = "@harisss";
+export const ownerBhaskar = "@bhastrip";
