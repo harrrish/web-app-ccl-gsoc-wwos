@@ -42,7 +42,11 @@ export default function Home() {
           <MdFeedback className="text-[var(--color-green-glow)]" size={20} />
           For feedback or suggestions contact
           <span className="text-[var(--color-primary)] font-f3 ml-1 hover:text-[var(--color-blue-glow)] transition-colors duration-300 cursor-pointer">
+<<<<<<< HEAD
             {ownerID}
+=======
+            harisss@amazon.com !bhastrip@amazon.com
+>>>>>>> 5cb0098fd9bfbb50ac4339f6a8899a9aca69b07a
           </span>
         </div>
       </div>
