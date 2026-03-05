@@ -8,13 +8,13 @@ export default function Owner() {
       For feedback or suggestions contact
       <div className="flex gap-1">
         <span className="text-[var(--color-primary)] font-f3 ml-1 hover:text-[var(--color-blue-glow)] transition-colors duration-300 cursor-pointer">
-          <a href="https://app.slack.com/client/E015GUGD2V6/D033SCC2NLT">
+          <a href="https://atoz.amazon.work/phonetool/users/harisss">
             {ownerHarish}
           </a>
         </span>
         or
         <span className="text-[var(--color-primary)] font-f3 ml-1 hover:text-[var(--color-blue-glow)] transition-colors duration-300 cursor-pointer">
-          <a href="https://app.slack.com/client/E015GUGD2V6/D09E5TT6MDE">
+          <a href="https://atoz.amazon.work/phonetool/users/bhastrip">
             {ownerBhaskar}
           </a>
         </span>
