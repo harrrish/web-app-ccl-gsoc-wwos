@@ -13,6 +13,7 @@ export const station = [
   "AMAZON FRESH",
   "WHOLE FOODS MARKET WFM",
   "PRIMENOW PN",
+  "SSD DC",
 ];
 
 export const archiveEmail = "wwos-gsoc-archive@amazon.com";
@@ -28,3 +29,5 @@ export async function handleCopyArchive() {
 }
 
 export const CCLVersion = "03.3.26";
+
+export const ownerID = "@harisss | !@bhastrip";

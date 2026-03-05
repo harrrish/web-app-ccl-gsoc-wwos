@@ -1,4 +1,4 @@
-import { handleCopyArchive } from "../data";
+import { handleCopyArchive, ownerID } from "../data";
 import { MdContentCopy, MdEmail, MdContacts, MdWarning } from "react-icons/md";
 import { FaExclamationTriangle, FaCheckCircle } from "react-icons/fa";
 import { HiShieldCheck } from "react-icons/hi";
@@ -8,12 +8,12 @@ export default function ContactsFooter({ contacts, sev }) {
     sev === "1"
       ? "bg-red-900 text-white border-red-700"
       : sev === "2"
-      ? "bg-red-600 text-white border-red-500"
-      : sev === "3"
-      ? "bg-yellow-500 text-black border-yellow-400"
-      : sev === "4"
-      ? "bg-green-600 text-white border-green-500"
-      : "bg-gray-500 text-white border-gray-400";
+        ? "bg-red-600 text-white border-red-500"
+        : sev === "3"
+          ? "bg-yellow-500 text-black border-yellow-400"
+          : sev === "4"
+            ? "bg-green-600 text-white border-green-500"
+            : "bg-gray-500 text-white border-gray-400";
 
   async function handleCopy() {
     await navigator.clipboard.writeText(contacts);
@@ -92,7 +92,7 @@ export default function ContactsFooter({ contacts, sev }) {
           <div className="text-center text-sm font-f2 text-[var(--color-f2)] border-t border-[var(--color-border-soft)] pt-3 w-full">
             For feedback or suggestions contact
             <span className="font-f3 text-[var(--color-primary)] ml-1 hover:text-[var(--color-blue-glow)] transition-colors duration-300 cursor-pointer">
-              harisss@amazon.com
+              {ownerID}
             </span>
           </div>
         </div>
