@@ -104,7 +104,7 @@ export default function AMET() {
     newCon.push("RISK GLOBAL LAST MILE");
     newCon.push("EUROPE ROC SUPPORT GROUP");
     newCon.push("EMEA LAST MILE OPS DISRUPTION");
-    newCon.push("APAC AMET INTERNAL COMMS SUPPORT GROUP");
+    newCon.push("APAC MEATR INTERNAL COMMS SUPPORT GROUP");
 
     setContacts([...newCon]);
   };
