@@ -48,6 +48,7 @@ export default function LATAM() {
         newCon.push("sds-gsoc-flex-incident@amazon.com.mx");
       } else if (reportedBy === "CXCMKnownDA") {
         newCon.push("sds-gsoc-driver-potentialharm@amazon.com.mx");
+        newCon.push("phd-emt-intake@amazon.com");
       } else if (reportedBy === "CXCM") {
         newCon.push("sds-gsoc-cx-incident@amazon.com.mx");
       } else if (reportedBy === "HubDA") {
@@ -60,6 +61,7 @@ export default function LATAM() {
         newCon.push("sds-gsoc-flex-incident@amazon.ca");
       } else if (reportedBy === "CXCMKnownDA") {
         newCon.push("sds-gsoc-driver-potentialharm@amazon.com.br");
+        newCon.push("phd-emt-intake@amazon.com");
       } else if (reportedBy === "CXCM") {
         newCon.push("sds-gsoc-cx-incident@amazon.com.br");
       }
@@ -75,6 +77,8 @@ export default function LATAM() {
     if (hazardous === "YES") {
       newCon.push("NA HAZMAT SUPPORT GROUP");
       newCon.push("DANGEROUS GOODS SUPPORT GROUP");
+      newCon.push("cs-gcc-all@amazon.com");
+
     }
 
     //* THERMAL
