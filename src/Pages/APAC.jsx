@@ -59,23 +59,27 @@ export default function APAC() {
     );
 
     //* REPORTED BY
-    if (reportedBy === "DP" && country === "AU")
+    if (reportedBy === "DP" && country === "AU") {
       newCon.push("sds-gsoc-flex-incident@amazon.com.au");
-    else if (reportedBy === "DP" && country === "JP")
+    } else if (reportedBy === "DP" && country === "JP") {
       newCon.push("sds-gsoc-flex-incident@amazon.co.jp");
-    else if (reportedBy === "DP" && country === "SG")
+    } else if (reportedBy === "DP" && country === "SG") {
       newCon.push("sds-gsoc-flex-incident@amazon.sg");
-    else if (reportedBy === "DP" && country === "IN")
+    } else if (reportedBy === "DP" && country === "IN") {
       newCon.push("sds-gsoc-flex-incident@amazon.in");
-    else if (reportedBy === "CXCMKnownDA" && country === "AU")
-      newCon.push("sds-gsoc-driver-potentialharm@amazon.com.au"); newCon.push("phd-emt-intake@amazon.com");
-    else if (reportedBy === "CXCMKnownDA" && country === "JP")
-      newCon.push("sds-gsoc-driver-potentialharm@amazon.co.jp"); newCon.push("phd-emt-intake@amazon.com");
-    else if (reportedBy === "CXCMKnownDA" && country === "SG")
-      newCon.push("sds-gsoc-driver-potentialharm@amazon.sg"); newCon.push("phd-emt-intake@amazon.com");
-    else if (reportedBy === "CXCMKnownDA" && country === "IN")
-      newCon.push("sds-gsoc-driver-potentialharm@amazon.in"); newCon.push("phd-emt-intake@amazon.com");
-    else if (reportedBy === "CXCM" && country === "AU")
+    } else if (reportedBy === "CXCMKnownDA" && country === "AU") {
+      newCon.push("sds-gsoc-driver-potentialharm@amazon.com.au");
+      newCon.push("phd-emt-intake@amazon.com");
+    } else if (reportedBy === "CXCMKnownDA" && country === "JP") {
+      newCon.push("sds-gsoc-driver-potentialharm@amazon.co.jp");
+      newCon.push("phd-emt-intake@amazon.com");
+    } else if (reportedBy === "CXCMKnownDA" && country === "SG") {
+      newCon.push("sds-gsoc-driver-potentialharm@amazon.sg");
+      newCon.push("phd-emt-intake@amazon.com");
+    } else if (reportedBy === "CXCMKnownDA" && country === "IN") {
+      newCon.push("sds-gsoc-driver-potentialharm@amazon.in");
+      newCon.push("phd-emt-intake@amazon.com");
+    } else if (reportedBy === "CXCM" && country === "AU")
       newCon.push("sds-gsoc-cx-incident@amazon.com.au");
     else if (reportedBy === "CXCM" && country === "JP")
       newCon.push("sds-gsoc-cx-incident@amazon.co.jp");
@@ -83,25 +87,30 @@ export default function APAC() {
       newCon.push("sds-gsoc-cx-incident@amazon.sg");
     else if (reportedBy === "CXCM" && country === "IN")
       newCon.push("sds-gsoc-cx-incident@amazon.in");
-    else if (reportedBy === "HubDA" && country === "AU")
-      newCon.push("sds-gsoc-driver-potentialharm@amazon.com.au"); newCon.push("phd-emt-intake@amazon.com");
-    else if (reportedBy === "HubDA" && country === "JP") {
+    else if (reportedBy === "HubDA" && country === "AU") {
+      newCon.push("sds-gsoc-driver-potentialharm@amazon.com.au");
+      newCon.push("phd-emt-intake@amazon.com");
+    } else if (reportedBy === "HubDA" && country === "JP") {
       newCon.push("jp-hubdelivery-gsoc@amazon.co.jp");
       newCon.push("munekaa@amazon.co.jp");
       newCon.push("symeont@amazon.co.jp");
       newCon.push("kkpra@amazon.co.jp");
       newCon.push("navkumaz@amazon.co.jp");
-      newCon.push("miyamoko@amazon.co.jp"); newCon.push("phd-emt-intake@amazon.com");
-    } else if (reportedBy === "HubDA" && country === "SG")
-      newCon.push("sds-gsoc-driver-potentialharm@amazon.sg"); newCon.push("phd-emt-intake@amazon.com");
-    else if (reportedBy === "HubDA" && country === "IN") {
+      newCon.push("miyamoko@amazon.co.jp");
+      newCon.push("phd-emt-intake@amazon.com");
+    } else if (reportedBy === "HubDA" && country === "SG") {
+      newCon.push("sds-gsoc-driver-potentialharm@amazon.sg");
+      newCon.push("phd-emt-intake@amazon.com");
+    } else if (reportedBy === "HubDA" && country === "IN") {
       newCon.push("sds-gsoc-driver-potentialharm@amazon.in");
-      newCon.push("abhishhp"); newCon.push("phd-emt-intake@amazon.com");
+      newCon.push("abhishhp");
+      newCon.push("phd-emt-intake@amazon.com");
     }
 
     //* HAZARDOUS
     if (hazardous === "YES") {
-      newCon.push(`APAC HAZMAT SEV${severity === "5" ? "4" : severity}`); newCon.push("cs-gcc-all@amazon.com");
+      newCon.push(`APAC HAZMAT SEV${severity === "5" ? "4" : severity}`);
+      newCon.push("cs-gcc-all@amazon.com");
     }
 
     //* CX FACING IMPACT
