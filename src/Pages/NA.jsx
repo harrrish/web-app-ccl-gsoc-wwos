@@ -52,12 +52,10 @@ export default function NA() {
         if (language === "SPANISH")
           newCon.push("sds-gsoc-flex-incident-spanish@amazon.com");
       } else if (reportedBy === "CXCMKnownDA") {
-        if (language === "ENGLISH"){
-          newCon.push("sds-gsoc-driver-potentialharm@amazon.com");
-          newCon.push("phd-emt-intake@amazon.com");}
-        if (language === "SPANISH"){
-          newCon.push("sds-gsoc-driver-potentialharm-spanish@amazon.com");
-          newCon.push("phd-emt-intake@amazon.com");}
+        if (language === "ENGLISH")
+          newCon.push("sds-gsoc-driver-potentialharm@amazon.com"); newCon.push("phd-emt-intake@amazon.com");
+        if (language === "SPANISH")
+          newCon.push("sds-gsoc-driver-potentialharm-spanish@amazon.com"); newCon.push("phd-emt-intake@amazon.com");
       } else if (reportedBy === "CXCM") {
         if (language === "ENGLISH")
           newCon.push("sds-gsoc-cx-incident@amazon.com");
