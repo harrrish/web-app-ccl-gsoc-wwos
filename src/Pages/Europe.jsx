@@ -73,19 +73,19 @@ export default function EUROPE() {
 
     if (reportedBy === "CXCMKnownDA" || reportedBy === "CXCMKnownHubDA") {
       if (country === "UK") {
-        newCon.push(`sds-gsoc-driver-potentialharm@amazon.co.uk`);
+        newCon.push(`sds-gsoc-driver-potentialharm@amazon.co.uk`); newCon.push("phd-emt-intake@amazon.com");
       } else if (country === "IE") {
-        newCon.push(`sds-gsoc-driver-potentialharm@amazon.ie`);
+        newCon.push(`sds-gsoc-driver-potentialharm@amazon.ie`); newCon.push("phd-emt-intake@amazon.com");
       } else if (country === "NL") {
-        newCon.push(`sds-gsoc-driver-potentialharm@amazon.nl`);
+        newCon.push(`sds-gsoc-driver-potentialharm@amazon.nl`); newCon.push("phd-emt-intake@amazon.com");
       } else if (country === "DE") {
-        newCon.push(`sds-gsoc-driver-potentialharm@amazon.de`);
+        newCon.push(`sds-gsoc-driver-potentialharm@amazon.de`); newCon.push("phd-emt-intake@amazon.com");
       } else if (country === "ES") {
-        newCon.push(`sds-gsoc-driver-potentialharm@amazon.es`);
+        newCon.push(`sds-gsoc-driver-potentialharm@amazon.es`); newCon.push("phd-emt-intake@amazon.com");
       } else if (country === "FR") {
-        newCon.push(`sds-gsoc-driver-potentialharm@amazon.fr`);
+        newCon.push(`sds-gsoc-driver-potentialharm@amazon.fr`); newCon.push("phd-emt-intake@amazon.com");
       } else if (country === "IT") {
-        newCon.push(`sds-gsoc-driver-potentialharm@amazon.it`);
+        newCon.push(`sds-gsoc-driver-potentialharm@amazon.it`); newCon.push("phd-emt-intake@amazon.com");
       }
     }
 
@@ -99,6 +99,7 @@ export default function EUROPE() {
     if (hazardous === "YES") {
       newCon.push("NA HAZMAT SUPPORT GROUP");
       newCon.push("DANGEROUS GOODS SUPPORT GROUP");
+      newCon.push("cs-gcc-all@amazon.com");
     }
 
     //* DISCRIMINATION
