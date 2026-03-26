@@ -53,13 +53,11 @@ export default function NA() {
           newCon.push("sds-gsoc-flex-incident-spanish@amazon.com");
       } else if (reportedBy === "CXCMKnownDA") {
         if (language === "ENGLISH")
-          newCon.push("sds-gsoc-driver-potentialharm@amazon.com"); 
-        if (language === "ENGLISH")
-          newCon.push("phd-emt-intake@amazon.com");
+          newCon.push("sds-gsoc-driver-potentialharm@amazon.com");
+        if (language === "ENGLISH") newCon.push("phd-emt-intake@amazon.com");
         if (language === "SPANISH")
-          newCon.push("sds-gsoc-driver-potentialharm-spanish@amazon.com"); 
-        if (language === "SPANISH")
-          newCon.push("phd-emt-intake@amazon.com");
+          newCon.push("sds-gsoc-driver-potentialharm-spanish@amazon.com");
+        if (language === "SPANISH") newCon.push("phd-emt-intake@amazon.com");
       } else if (reportedBy === "CXCM") {
         if (language === "ENGLISH")
           newCon.push("sds-gsoc-cx-incident@amazon.com");
@@ -79,7 +77,7 @@ export default function NA() {
       } else if (reportedBy === "CXCMKnownDA") {
         if (language === "ENGLISH")
           newCon.push("sds-gsoc-driver-potentialharm@amazon.ca");
-          newCon.push("phd-emt-intake@amazon.com");
+        newCon.push("phd-emt-intake@amazon.com");
         if (language === "SPANISH")
           newCon.push("sds-gsoc-driver-potentialharm-spanish@amazon.ca");
       } else if (reportedBy === "CXCM") {
@@ -106,11 +104,10 @@ export default function NA() {
     }
 
     //* DETRIMENTAL
-    if (detrimental === "YES"){
+    if (detrimental === "YES") {
       newCon.push(`AMER LAST MILE RISK`);
       newCon.push("phd-emt-intake@amazon.com");
-      }
-      
+    }
 
     //* THERMAL
     if (thermal === "YES" && severity === "5")
@@ -126,13 +123,16 @@ export default function NA() {
     }
 
     //* DISCRIMINATION
-    if (discrimination === "YES") newCon.push("DISCRIMINATION SUPPORT GROUP");
+    if (discrimination === "YES") {
+      newCon.push("DISCRIMINATION SUPPORT GROUP");
+    }
 
     //* VEHICLE MALFUNCTION
-    if (vehicleMalFunction === "YES" && country === "US")
+    if (vehicleMalFunction === "YES" && country === "US") {
       newCon.push("US AMZL FLEET SUPPORT GROUP");
-    else if (vehicleMalFunction === "YES" && country === "CA")
+    } else if (vehicleMalFunction === "YES" && country === "CA") {
       newCon.push("CA AMZL FLEET SUPPORT GROUP,");
+    }
 
     if (severity === "1" || severity === "2") {
       newCon.push("AMER LAST MILE RISK");
@@ -152,7 +152,7 @@ export default function NA() {
 
     setContacts([...newCon]);
 
-    console.log(contacts);
+    // console.log(contacts);
   };
 
   return (
