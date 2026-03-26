@@ -50,24 +50,28 @@ export default function AMET() {
     if (
       reportedBy === "CXCMKnownDA" ||
       (reportedBy === "HubDA" && country === "AE")
-    )
-      newCon.push("sds-gsoc-driver-potentialharm@amazon.ae"); newCon.push("phd-emt-intake@amazon.com");
-    else if (
+    ) {
+      newCon.push("sds-gsoc-driver-potentialharm@amazon.ae");
+      newCon.push("phd-emt-intake@amazon.com");
+    } else if (
       reportedBy === "CXCMKnownDA" ||
       (reportedBy === "HubDA" && country === "SA")
-    )
-     newCon.push("sds-gsoc-driver-potentialharm@amazon.sa"); newCon.push("phd-emt-intake@amazon.com");
-    else if (
+    ) {
+      newCon.push("sds-gsoc-driver-potentialharm@amazon.sa");
+      newCon.push("phd-emt-intake@amazon.com");
+    } else if (
       reportedBy === "CXCMKnownDA" ||
       (reportedBy === "HubDA" && country === "EG")
-    )
-     newCon.push("sds-gsoc-driver-potentialharm@amazon.eg"); newCon.push("phd-emt-intake@amazon.com");
-    else if (
+    ) {
+      newCon.push("sds-gsoc-driver-potentialharm@amazon.eg");
+      newCon.push("phd-emt-intake@amazon.com");
+    } else if (
       reportedBy === "CXCMKnownDA" ||
-      (reportedBy === "HubDA" && country === "TR") 
-    )
-     newCon.push("sds-gsoc-driver-potentialharm@amazon.com.tr");newCon.push("phd-emt-intake@amazon.com");
-    else if (reportedBy === "CXCM" && country === "AE")
+      (reportedBy === "HubDA" && country === "TR")
+    ) {
+      newCon.push("sds-gsoc-driver-potentialharm@amazon.com.tr");
+      newCon.push("phd-emt-intake@amazon.com");
+    } else if (reportedBy === "CXCM" && country === "AE")
       newCon.push("sds-gsoc-cx-incident@amazon.ae");
     else if (reportedBy === "CXCM" && country === "SA")
       newCon.push("sds-gsoc-cx-incident@amazon.sa");
@@ -78,7 +82,8 @@ export default function AMET() {
 
     //* HAZARDOUS
     if (hazardous === "YES") {
-      newCon.push(`EMEA HAZMAT SEV${severity === "5" ? "4" : severity}`); newCon.push("cs-gcc-all@amazon.com");
+      newCon.push(`EMEA HAZMAT SEV${severity === "5" ? "4" : severity}`);
+      newCon.push("cs-gcc-all@amazon.com");
     }
 
     //* CX FACING IMPACT
@@ -88,13 +93,19 @@ export default function AMET() {
     }
 
     //* DISCRIMINATION
-    if (discrimination === "YES") newCon.push("DISCRIMINATION SUPPORT GROUP");
+    if (discrimination === "YES") {
+      newCon.push("DISCRIMINATION SUPPORT GROUP");
+    }
 
     //* SEV1
-    if (severity === "1") newCon.push("EMEA SEV1");
+    if (severity === "1") {
+      newCon.push("EMEA SEV1");
+    }
 
     //* SEV2
-    if (severity === "2") newCon.push("EMEA SEV2");
+    if (severity === "2") {
+      newCon.push("EMEA SEV2");
+    }
 
     //* ===========================> SMILEY CONTACTS
     newCon.push("GLOBAL OTR SAFETY SUPPORT GROUP");
