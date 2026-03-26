@@ -73,7 +73,7 @@ export default function NA() {
         if (language === "ENGLISH")
           newCon.push("sds-gsoc-flex-incident@amazon.ca");
         if (language === "SPANISH")
-          newCon.push("sds-gsoc-flex-incident-spanish@amazon.ca,");
+          newCon.push("sds-gsoc-flex-incident-spanish@amazon.ca");
       } else if (reportedBy === "CXCMKnownDA") {
         if (language === "ENGLISH")
           newCon.push("sds-gsoc-driver-potentialharm@amazon.ca");
