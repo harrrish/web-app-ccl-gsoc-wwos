@@ -51,22 +51,22 @@ export default function AMET() {
       reportedBy === "CXCMKnownDA" ||
       (reportedBy === "HubDA" && country === "AE")
     )
-      newCon.push("sds-gsoc-driver-potentialharm@amazon.ae");
+      newCon.push("sds-gsoc-driver-potentialharm@amazon.ae"); newCon.push("phd-emt-intake@amazon.com");
     else if (
       reportedBy === "CXCMKnownDA" ||
       (reportedBy === "HubDA" && country === "SA")
     )
-      newCon.push("sds-gsoc-driver-potentialharm@amazon.sa");
+      newCon.push("sds-gsoc-driver-potentialharm@amazon.sa"); newCon.push("phd-emt-intake@amazon.com");
     else if (
       reportedBy === "CXCMKnownDA" ||
       (reportedBy === "HubDA" && country === "EG")
     )
-      newCon.push("sds-gsoc-driver-potentialharm@amazon.eg");
+      newCon.push("sds-gsoc-driver-potentialharm@amazon.eg"); newCon.push("phd-emt-intake@amazon.com");
     else if (
       reportedBy === "CXCMKnownDA" ||
-      (reportedBy === "HubDA" && country === "TR")
+      (reportedBy === "HubDA" && country === "TR") 
     )
-      newCon.push("sds-gsoc-driver-potentialharm@amazon.com.tr");
+      newCon.push("sds-gsoc-driver-potentialharm@amazon.com.tr"); newCon.push("phd-emt-intake@amazon.com");
     else if (reportedBy === "CXCM" && country === "AE")
       newCon.push("sds-gsoc-cx-incident@amazon.ae");
     else if (reportedBy === "CXCM" && country === "SA")
@@ -78,7 +78,7 @@ export default function AMET() {
 
     //* HAZARDOUS
     if (hazardous === "YES") {
-      newCon.push(`EMEA HAZMAT SEV${severity === "5" ? "4" : severity}`);
+      newCon.push(`EMEA HAZMAT SEV${severity === "5" ? "4" : severity}`); newCon.push("cs-gcc-all@amazon.com");
     }
 
     //* CX FACING IMPACT
