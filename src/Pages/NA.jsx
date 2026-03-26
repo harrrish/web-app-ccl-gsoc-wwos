@@ -54,8 +54,10 @@ export default function NA() {
       } else if (reportedBy === "CXCMKnownDA") {
         if (language === "ENGLISH")
           newCon.push("sds-gsoc-driver-potentialharm@amazon.com");
+          newCon.push("phd-emt-intake@amazon.com");
         if (language === "SPANISH")
           newCon.push("sds-gsoc-driver-potentialharm-spanish@amazon.com");
+          newCon.push("phd-emt-intake@amazon.com");
       } else if (reportedBy === "CXCM") {
         if (language === "ENGLISH")
           newCon.push("sds-gsoc-cx-incident@amazon.com");
@@ -71,12 +73,13 @@ export default function NA() {
         if (language === "ENGLISH")
           newCon.push("sds-gsoc-flex-incident@amazon.ca");
         if (language === "SPANISH")
-          newCon.push("sds-gsoc-flex-incident-spanish@amazon.com,");
+          newCon.push("sds-gsoc-flex-incident-spanish@amazon.ca,");
       } else if (reportedBy === "CXCMKnownDA") {
         if (language === "ENGLISH")
           newCon.push("sds-gsoc-driver-potentialharm@amazon.ca");
+          newCon.push("phd-emt-intake@amazon.com");
         if (language === "SPANISH")
-          newCon.push("sds-gsoc-driver-potentialharm-spanish@amazon.com");
+          newCon.push("sds-gsoc-driver-potentialharm-spanish@amazon.ca");
       } else if (reportedBy === "CXCM") {
         if (language === "ENGLISH")
           newCon.push("sds-gsoc-cx-incident@amazon.ca");
@@ -100,7 +103,11 @@ export default function NA() {
     }
 
     //* DETRIMENTAL
-    if (detrimental === "YES") newCon.push(`AMER LAST MILE RISK`);
+    if (detrimental === "YES"){
+      newCon.push(`AMER LAST MILE RISK`);
+      newCon.push("phd-emt-intake@amazon.com")
+        ;}
+      
 
     //* THERMAL
     if (thermal === "YES" && severity === "5")
