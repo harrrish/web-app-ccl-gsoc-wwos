@@ -107,8 +107,9 @@ export default function NA() {
     //* DETRIMENTAL
     if (detrimental === "YES"){
       newCon.push(`AMER LAST MILE RISK`);
-      newCon.push("phd-emt-intake@amazon.com")
-        ;}
+      newCon.push("phd-emt-intake@amazon.com");
+      newCon.push("cs-gcc-all@amazon.com");
+    }
       
 
     //* THERMAL
