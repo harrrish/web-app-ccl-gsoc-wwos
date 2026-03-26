@@ -102,14 +102,14 @@ export default function NA() {
     if (hazardous === "YES") {
       newCon.push("NA HAZMAT SUPPORT GROUP");
       newCon.push("DANGEROUS GOODS SUPPORT GROUP");
+      newCon.push("cs-gcc-all@amazon.com");
     }
 
     //* DETRIMENTAL
     if (detrimental === "YES"){
       newCon.push(`AMER LAST MILE RISK`);
       newCon.push("phd-emt-intake@amazon.com");
-      newCon.push("cs-gcc-all@amazon.com");
-    }
+      }
       
 
     //* THERMAL
