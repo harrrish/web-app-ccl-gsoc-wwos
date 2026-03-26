@@ -51,7 +51,7 @@ export default function AMET() {
       reportedBy === "CXCMKnownDA" ||
       (reportedBy === "HubDA" && country === "AE")
     ){
-      newCon.push("sds-gsoc-driver-potentialharm@amazon.ae");
+      newCon.push("sds-gsoc-driver-potentialharm@amazon.ae", "phd-emt-intake@amazon.com");
       newCon.push("phd-emt-intake@amazon.com");}
     else if (
       reportedBy === "CXCMKnownDA" ||
