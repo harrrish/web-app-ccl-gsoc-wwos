@@ -28,7 +28,7 @@ export async function handleCopyArchive() {
   alert(`Copied "wwos-gsoc-archive@amazon.com" to clipboard`);
 }
 
-export const CCLVersion = "03.3.26";
+export const CCLVersion = "04.29.26";
 
 export const ownerHarish = "@harisss";
 export const ownerBhaskar = "@bhastrip";
