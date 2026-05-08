@@ -93,7 +93,6 @@ export default function NA() {
     //* CX FACING IMPACT
     if (cxImpact === "YES") {
       newCon.push(`${country} CX SUPPORT GROUP`);
-      newCon.push(`cs-gcc-all@amazon.com`);
     }
 
     //* HAZARDOUS
