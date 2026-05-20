@@ -82,7 +82,7 @@ export default function AMET() {
 
     //* HAZARDOUS
     if (hazardous === "YES") {
-      newCon.push(`EMEA HAZMAT SEV${severity === "5" ? "4" : severity}`);
+      newCon.push('INTERNATIONAL HAZMAT SUPPORT GROUP');
       newCon.push("cs-gcc-all@amazon.com");
     }
 
