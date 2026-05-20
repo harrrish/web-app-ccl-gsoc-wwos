@@ -109,7 +109,7 @@ export default function APAC() {
 
     //* HAZARDOUS
     if (hazardous === "YES") {
-      newCon.push(`APAC HAZMAT SEV${severity === "5" ? "4" : severity}`);
+      newCon.push("INTERNATIONAL HAZMAT SUPPORT GROUP");
       newCon.push("cs-gcc-all@amazon.com");
     }
 
