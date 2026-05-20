@@ -98,6 +98,7 @@ export default function EUROPE() {
     //* HAZARDOUS
     if (hazardous === "YES") {
       newCon.push("EUROPE HAZMAT SUPPORT GROUP");
+      newCon.push(`EMEA HAZMAT SEV${severity === "5" ? "4" : severity}`);
       newCon.push("cs-gcc-all@amazon.com");
     }
 
