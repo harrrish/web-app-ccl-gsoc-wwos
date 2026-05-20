@@ -97,8 +97,7 @@ export default function EUROPE() {
 
     //* HAZARDOUS
     if (hazardous === "YES") {
-      newCon.push("NA HAZMAT SUPPORT GROUP");
-      newCon.push("DANGEROUS GOODS SUPPORT GROUP");
+      newCon.push("EUROPE HAZMAT SUPPORT GROUP");
       newCon.push("cs-gcc-all@amazon.com");
     }
 
