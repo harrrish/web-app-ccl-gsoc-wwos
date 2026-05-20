@@ -75,7 +75,7 @@ export default function LATAM() {
 
     //* HAZARDOUS
     if (hazardous === "YES") {
-      newCon.push("NA HAZMAT SUPPORT GROUP");
+      newCon.push("INTERNATIONAL HAZMAT SUPPORT GROUP");
       newCon.push("DANGEROUS GOODS SUPPORT GROUP");
       newCon.push("cs-gcc-all@amazon.com");
 
